@@ -2,12 +2,12 @@
 
 Replication code, Source Data and Supplementary Data for
 
-> Li, J. G., Hardman, S. & Jenn, A. *Electric vehicle charging supports local business spending beyond charging revenue.* Communications Sustainability (2026).
+> Li, J. G., Hardman, S. & Jenn, A. *Electric vehicle charging supports local business spending beyond charging revenue.*
 
 The study links a 2025 survey of 1,586 self-reported DC fast charging sessions in the United States and Canada with the commercial amenities within 250 m of each charging location, and estimates a two-part hurdle model of ancillary spending (whether anything was spent, and how much).
 
 * Code archive (Zenodo): https://doi.org/10.5281/zenodo.XXXXXXX
-* Data (Dryad): https://doi.org/10.5061/dryad.XXXXXXX
+* Data (Dryad): https://doi.org/10.5061/dryad.v15dv42bb
 
 ## Quick start
 

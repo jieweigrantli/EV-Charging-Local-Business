@@ -2,7 +2,7 @@
 Shared configuration and helper functions for the replication pipeline of
 
     Li, Hardman & Jenn, "Electric vehicle charging supports local business
-    spending beyond charging revenue" (Communications Sustainability).
+    spending beyond charging revenue".
 
 Every numbered script in this folder imports this module.  Nothing in here
 performs data cleaning: the analysis starts from the analytic dataset
@@ -45,7 +45,7 @@ DATA_FILE = Path(os.environ.get("EVCLB_DATA", _default if _default.exists() else
 if not DATA_FILE.exists():
     sys.exit(
         f"Dataset not found: {DATA_FILE}\n"
-        "Download the analytic dataset from the Dryad deposit (https://doi.org/10.5061/dryad.XXXXXXX) "
+        "Download the analytic dataset from the Dryad deposit (https://doi.org/10.5061/dryad.v15dv42bb) "
         "and save it as data/filtered_dataset.csv, or set EVCLB_DATA to its path."
     )
 
