@@ -39,7 +39,7 @@ Tested with Python 3.11.1; package versions are pinned in `requirements.txt`.
 | `07_map.py` | Supplementary Fig. 3 (map of charging locations) |
 | `08_source_data.py` | `Source_Data.xlsx` (one sheet per figure panel) and Supplementary Data 2 (all model outputs) |
 
-All outputs are written to `outputs/` (`tables/`, `figures/`, `source_data/`, `supplementary_data/`, `logs/`). Each script can also be run on its own from the `code/` folder; `common.py` holds the model specification and shared helpers. Supplementary Fig. 4 is a static illustration (`manuscript/image/`).
+All outputs are written to `outputs/` (`tables/`, `figures/`, `source_data/`, `supplementary_data/`, `logs/`). Each script can also be run on its own from the `code/` folder; `common.py` holds the model specification and shared helpers.
 
 ## Data
 
@@ -63,7 +63,6 @@ Included in the repository: `data/charger_coordinates.csv` (the public charger n
 code/                 numbered scripts, common.py, R/ cross-check
 data/                 dataset (download), coordinates, benchmark percentages, variable dictionary
 outputs/              tables, figures, Source Data, Supplementary Data, logs
-manuscript/           LaTeX source of the main text and Supplementary Information
 ```
 
 ## License
