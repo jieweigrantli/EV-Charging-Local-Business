@@ -101,6 +101,7 @@ print("[xlsx] outputs/source_data/Source_Data.xlsx")
 tables = {
     "Table1_spending_by_store": TAB_DIR / "table_1_spending_by_store.csv",
     "Table2_SuppTable2_main_model": TAB_DIR / "supplementary_table_2_full_model.csv",
+    "Table2_model_fit": TAB_DIR / "table_2_model_fit.csv",
     "Table3_SuppTable3_by_reason": TAB_DIR / "supplementary_table_3_trip_purpose_full.csv",
     "SuppTable3_Wald_tests": TAB_DIR / "wald_equality_tests.csv",
     "SuppTable3_Wald_survey_item": TAB_DIR / "wald_equality_tests_sensitivity_survey_item_outcome.csv",
@@ -115,6 +116,7 @@ notes = pd.DataFrame({"Supplementary Data 2": [
     "intensive margin = OLS on ln(1 + spend) conditional on positive spending. Standard errors are HC3 robust;",
     "P values are two-sided Wald tests with no adjustment for multiple comparisons.",
     "Table2_SuppTable2_main_model: columns with suffix _logit refer to the extensive margin, _ols to the intensive margin.",
+    "Table2_model_fit: sample sizes, log-likelihoods, pseudo-R2 (Cox-Snell and McFadden), R2 and information criteria of the two parts of the main model.",
     "Table3_SuppTable3_by_reason: extensive-margin logit estimated separately within each charging-reason group.",
     "SuppTable3_Wald_tests: joint Wald test (2 d.f.) that a coefficient is equal across the three groups, from a fully interacted pooled logit.",
     "Counterfactual_scenarios: recycled predictions for shifts and caps of charge duration (Supplementary Figure 5).",

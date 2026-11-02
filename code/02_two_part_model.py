@@ -46,6 +46,14 @@ tab_ols = coef_table(ols, "intensive_ols")
 full = tab_glm.merge(tab_ols, on=["term", "label"], suffixes=("_logit", "_ols")).drop(
     columns=["model_logit", "model_ols"])
 write_csv(full, TAB_DIR / "supplementary_table_2_full_model.csv")
+write_csv(pd.DataFrame([
+    {"model": "Extensive margin (binomial GLM, logit link)", "N": int(glm.nobs), "n_predictors": len(predictors),
+     "log_likelihood": glm.llf, "null_log_likelihood": glm.llnull, "pseudo_R2_cox_snell": cox_snell_r2(glm),
+     "pseudo_R2_mcfadden": mcfadden_r2(glm), "deviance": glm.deviance, "AIC": glm.aic, "BIC": glm.bic_llf},
+    {"model": "Intensive margin (OLS on ln(1+spend) | spend>0)", "N": int(ols.nobs), "n_predictors": len(predictors),
+     "log_likelihood": ols.llf, "R2": ols.rsquared, "adj_R2": ols.rsquared_adj, "AIC": ols.aic, "BIC": ols.bic,
+     "residual_SE": float(np.sqrt(ols.scale))},
+]), TAB_DIR / "table_2_model_fit.csv")
 
 # --------------------------------------------------------------------------- #
 # LaTeX: Table 2 (condensed) and Supplementary Table 2 (full)

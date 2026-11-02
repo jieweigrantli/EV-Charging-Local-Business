@@ -6,8 +6,8 @@ Model:                                GLM   Df Residuals:                     13
 Model Family:                    Binomial   Df Model:                           36
 Link Function:                      Logit   Scale:                          1.0000
 Method:                              IRLS   Log-Likelihood:                -872.71
-Date:                    Sun, 01 Nov 2026   Deviance:                       1745.4
-Time:                            21:08:20   Pearson chi2:                 1.37e+03
+Date:                    Mon, 02 Nov 2026   Deviance:                       1745.4
+Time:                            12:38:16   Pearson chi2:                 1.37e+03
 No. Iterations:                         4   Pseudo R-squ. (CS):            0.05843
 Covariance Type:                      HC3                                         
 =====================================================================================================
@@ -58,8 +58,8 @@ Intensive margin: OLS on log(1 + spend) | spend > 0, HC3 robust SE
 Dep. Variable:     store_total_spent_calc   R-squared:                       0.129
 Model:                                OLS   Adj. R-squared:                  0.067
 Method:                     Least Squares   F-statistic:                     1.594
-Date:                    Sun, 01 Nov 2026   Prob (F-statistic):             0.0174
-Time:                            21:08:20   Log-Likelihood:                -775.38
+Date:                    Mon, 02 Nov 2026   Prob (F-statistic):             0.0174
+Time:                            12:38:16   Log-Likelihood:                -775.38
 No. Observations:                     540   AIC:                             1625.
 Df Residuals:                         503   BIC:                             1784.
 Df Model:                              36                                         

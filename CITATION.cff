@@ -15,7 +15,7 @@ authors:
     affiliation: "Institute of Transportation Studies, University of California, Davis"
 version: 1.0.0
 date-released: 2026-11-01
-repository-code: https://github.com/jieweigrantli/EV-Charging-Local-Business
+repository-code: https://doi.org/10.5281/zenodo.23877269
 license: MIT
 keywords:
   - electric vehicles
