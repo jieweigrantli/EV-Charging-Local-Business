@@ -129,7 +129,7 @@ print("[xlsx] outputs/supplementary_data/Supplementary_Data_2_model_outputs.xlsx
 # Copy figures into the manuscript folder
 # --------------------------------------------------------------------------- #
 dst = ROOT / "manuscript" / "Figures"
-dst.mkdir(exist_ok=True)
+dst.mkdir(parents=True, exist_ok=True)
 for p in sorted(FIG_DIR.glob("*.pdf")):
     shutil.copy(p, dst / p.name)
 print(f"[copy] {len(list(FIG_DIR.glob('*.pdf')))} figure PDFs -> manuscript/Figures/")
