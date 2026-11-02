@@ -6,7 +6,7 @@ Replication code, Source Data and Supplementary Data for
 
 The study links a 2025 survey of 1,586 self-reported DC fast charging sessions in the United States and Canada with the commercial amenities within 250 m of each charging location, and estimates a two-part hurdle model of ancillary spending (whether anything was spent, and how much).
 
-* Code archive (Zenodo): https://doi.org/10.5281/zenodo.XXXXXXX
+* Code archive (Zenodo): [![DOI](https://zenodo.org/badge/1442414483.svg)](https://doi.org/10.5281/zenodo.23877269)
 * Data (Dryad): https://doi.org/10.5061/dryad.v15dv42bb
 
 ## Quick start
