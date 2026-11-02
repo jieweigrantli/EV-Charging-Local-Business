@@ -7,7 +7,7 @@ Model Family:                    Binomial   Df Model:                           
 Link Function:                      Logit   Scale:                          1.0000
 Method:                              IRLS   Log-Likelihood:                -194.79
 Date:                    Sun, 01 Nov 2026   Deviance:                       389.59
-Time:                            20:30:05   Pearson chi2:                     315.
+Time:                            21:08:22   Pearson chi2:                     315.
 No. Iterations:                         5   Pseudo R-squ. (CS):             0.1184
 Covariance Type:                      HC3                                         
 =====================================================================================================
@@ -58,7 +58,7 @@ Model Family:                    Binomial   Df Model:                           
 Link Function:                      Logit   Scale:                          1.0000
 Method:                              IRLS   Log-Likelihood:                -509.59
 Date:                    Sun, 01 Nov 2026   Deviance:                       1019.2
-Time:                            20:30:05   Pearson chi2:                     833.
+Time:                            21:08:22   Pearson chi2:                     833.
 No. Iterations:                         4   Pseudo R-squ. (CS):            0.08796
 Covariance Type:                      HC3                                         
 =====================================================================================================
@@ -109,7 +109,7 @@ Model Family:                    Binomial   Df Model:                           
 Link Function:                      Logit   Scale:                          1.0000
 Method:                              IRLS   Log-Likelihood:                -137.50
 Date:                    Sun, 01 Nov 2026   Deviance:                       275.01
-Time:                            20:30:05   Pearson chi2:                     259.
+Time:                            21:08:22   Pearson chi2:                     259.
 No. Iterations:                         6   Pseudo R-squ. (CS):             0.1799
 Covariance Type:                      HC3                                         
 =====================================================================================================

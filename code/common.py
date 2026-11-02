@@ -50,8 +50,7 @@ if not DATA_FILE.exists():
     )
 
 # --------------------------------------------------------------------------- #
-# Model specification (identical to the final specification in
-# the authors' analysis notebook)
+# Model specification
 # --------------------------------------------------------------------------- #
 TARGET = "store_total_spent_calc"   # ancillary spending in US$ (NaN = none reported)
 
@@ -146,7 +145,7 @@ STORE_TYPES = {
 }
 STORE_PREFIXES = ["store_", "store2_"]
 
-# Colour conventions carried over from the original figures
+# Colours
 PALETTE_PRIMARY = "#3C5488"
 PALETTE_SECONDARY = "#E64B35"
 PALETTE_TERTIARY = "#00A087"
@@ -198,7 +197,7 @@ class TwoPartResult:
 
 def fit_two_part(df: pd.DataFrame, X: pd.DataFrame, target: str = TARGET, cov_type: str = "HC3",
                  complete_cases: bool = True) -> TwoPartResult:
-    """Replicates `run_two_part_glm()` from the original notebook.
+    """Two-part hurdle model.
 
     Part 1: binomial GLM (logit link) on spend_anything = 1[target > 0]
             (sessions with no reported spending amount count as zero).

@@ -106,7 +106,7 @@ n_sessions_tx = int(tx_amt["response_id"].nunique())
 write_tex("table_1_spending_by_store_body.tex", body + "\n")
 print(f"[table 1] {n_tx} transactions with a reported amount from {n_sessions_tx} sessions")
 
-# Figure 1a: visits per category (= transactions with a reported amount, as in the original figure)
+# Figure 1a: visits per category (= transactions with a reported amount)
 fig1a = tab1[["store_type", "n"]].rename(columns={"n": "visits"})
 write_csv(fig1a, SD_DIR / "fig1a_visits_by_store.csv")
 # Figure 1b: every individual transaction amount (plotted as box + dots)

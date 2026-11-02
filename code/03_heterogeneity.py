@@ -5,8 +5,8 @@ Extensive-margin logit stratified by the reported reason for charging
 (Table 3 and Supplementary Table 3) and Wald tests of coefficient equality
 across the three groups.
 
-Replicates the grouped regressions and the coefficient-equality tests of the
-authors' original analysis scripts.
+Within each reason-for-charging group the extensive-margin logit is re-estimated;
+equality of coefficients across groups is tested in a fully interacted pooled logit.
 
 Outputs:
   outputs/tables/table_3_trip_purpose.{csv,tex}
@@ -27,7 +27,7 @@ predictors = available_predictors(df)
 
 # Grouped regressions: within each reason group, drop the reason dummies and the
 # gig-economy dummy (quasi-complete separation in sub-groups); missing predictor
-# values are set to 0, exactly as in the original notebook.
+# values are set to 0 (the centred mean).
 GROUPED_EXCL = {"veh_use_gigecon"} | set(REASON_VARS.values())
 group_cols = [c for c in predictors if c not in GROUPED_EXCL]
 
@@ -53,8 +53,7 @@ grouped = pd.concat(tables, ignore_index=True)
 # --------------------------------------------------------------------------- #
 # Wald tests of coefficient equality across groups: fully interacted pooled
 # logit (opportunity = reference; each session assigned to one group in the
-# order opportunity > long trip > routine).  Replicates
-# the authors' original Wald-test script.
+# order opportunity > long trip > routine).
 # --------------------------------------------------------------------------- #
 def assign_group(r):
     if r["charge_session_reason_opportunity"] == 1:
@@ -79,8 +78,6 @@ for c in group_cols:
     cols[f"{c}_long"] = (pooled[c] * pooled["_long"]).values
     cols[f"{c}_routine"] = (pooled[c] * pooled["_routine"]).values
 Xw = sm.add_constant(pd.DataFrame(cols, index=pooled.index))
-# Newton-Raphson converges here; the L-BFGS run of the original script stopped
-# before convergence, so a few P values differ slightly from the submitted table.
 mw = Logit(pooled["spend_any"], Xw).fit(disp=0, method="newton", maxiter=200)
 assert mw.mle_retvals["converged"], "pooled interacted logit did not converge"
 wald = []
@@ -98,7 +95,7 @@ write_csv(wald, TAB_DIR / "wald_equality_tests.csv")
 print(f"[wald] pooled fully interacted logit, N = {int(mw.nobs)}, converged = {mw.mle_retvals['converged']}")
 
 # Sensitivity: the same Wald tests with the survey yes/no item ("did you spend
-# money?") as outcome, the definition used in the originally submitted table.
+# money?") as outcome.
 pooled2 = df.copy()
 pooled2["_group"] = pooled2.apply(assign_group, axis=1)
 pooled2 = pooled2.dropna(subset=["_group", "store_total_spent_anything"] + group_cols)

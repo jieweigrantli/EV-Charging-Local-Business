@@ -36,8 +36,7 @@ plt.rcParams.update({
     "legend.fontsize": 8, "xtick.labelsize": 8, "ytick.labelsize": 8,
     "axes.spines.top": False, "axes.spines.right": False, "pdf.fonttype": 42, "ps.fonttype": 42,
 })
-# Optional seventh panel for Figure 3 (standalone restrooms, P = 0.040).  Off to
-# keep the six panels of the submitted figure.
+# Optional seventh panel for Figure 3 (standalone restrooms, P = 0.040).
 FIG3_INCLUDE_STANDALONE_RESTROOM = False
 
 
@@ -74,14 +73,14 @@ def figure_1():
     rng = np.random.default_rng(0)
     data = [np.log1p(tx.loc[tx["store_type"] == s, "amount"].values) for s in order]
     bp = ax2.boxplot(data, positions=y, vert=False, widths=0.55, patch_artist=True, showfliers=False,
-                     whis=1.5, boxprops=dict(facecolor="white", edgecolor=PALETTE_PRIMARY, linewidth=1.1),
-                     medianprops=dict(color=PALETTE_PRIMARY, linewidth=1.6),
-                     whiskerprops=dict(color=PALETTE_PRIMARY, linewidth=1.0),
-                     capprops=dict(color=PALETTE_PRIMARY, linewidth=1.0), zorder=3)
+                     whis=1.5, boxprops=dict(facecolor="none", edgecolor=PALETTE_PRIMARY, linewidth=1.3),
+                     medianprops=dict(color=PALETTE_PRIMARY, linewidth=1.8),
+                     whiskerprops=dict(color=PALETTE_PRIMARY, linewidth=1.1),
+                     capprops=dict(color=PALETTE_PRIMARY, linewidth=1.1), zorder=2)
     for yi, d in zip(y, data):
-        jitter = rng.uniform(-0.22, 0.22, size=len(d))
-        ax2.scatter(d, yi + jitter, s=9, color=PALETTE_SECONDARY, alpha=0.45, linewidths=0, zorder=2)
-        ax2.plot(np.log1p(np.expm1(d).mean()), yi, marker="D", color="black", markersize=4, zorder=4)
+        jitter = rng.uniform(-0.24, 0.24, size=len(d))
+        ax2.scatter(d, yi + jitter, s=9, color=PALETTE_SECONDARY, alpha=0.5, linewidths=0, zorder=3)
+        ax2.plot(np.log1p(np.expm1(d).mean()), yi, marker="D", color="black", markersize=4.5, zorder=4)
     ticks = [0, 1, 5, 10, 25, 50, 100, 250, 500, 1000]
     ax2.set_xticks(np.log1p(ticks))
     ax2.set_xticklabels([f"{t:,}" for t in ticks])
@@ -91,7 +90,7 @@ def figure_1():
     ax1.set_yticklabels(order)
     ax2.legend(handles=[
         Line2D([0], [0], marker="o", color=PALETTE_SECONDARY, lw=0, markersize=4, alpha=0.6, label="Individual transaction"),
-        Patch(facecolor="white", edgecolor=PALETTE_PRIMARY, label="Median and interquartile range"),
+        Patch(facecolor="none", edgecolor=PALETTE_PRIMARY, label="Median and interquartile range"),
         Line2D([0], [0], marker="D", color="black", lw=0, markersize=4, label="Mean")],
         loc="upper center", bbox_to_anchor=(0.5, -0.12), ncol=3, frameon=False, fontsize=7.5)
     panel_label(ax2, "b", x=-0.04)
@@ -111,33 +110,34 @@ def figure_2():
               "colocated_bathroom": "Co-located restroom", "park": "Park", "religion": "Religious facility",
               "entertainment": "Entertainment", "standalone_bathroom": "Standalone restroom"}
     colors = cmc.batlow(np.linspace(0.05, 0.9, len(order)))
-    fig, ax = plt.subplots(figsize=(11, 5.6))
-    max_n = dist["n_locations"].max()
-    for i, a in enumerate(order):
+    ncol = 4
+    nrow = int(np.ceil(len(order) / ncol))
+    fig, axes = plt.subplots(nrow, ncol, figsize=(12, 2.9 * nrow))
+    axes = axes.ravel()
+    st = stats.set_index("amenity")
+    for ax, a, col in zip(axes, order, colors):
         d = dist[dist["amenity"] == a].sort_values("count")
-        half = 0.46 * d["n_locations"].values / max_n
-        for k, h in zip(d["count"].values, half):
-            ax.add_patch(plt.Rectangle((i - h, k - 0.5), 2 * h, 1.0, facecolor=colors[i], edgecolor="none", alpha=0.95))
-        s = stats.set_index("amenity").loc[a]
-        ax.plot([i, i], [s["q1"], s["q3"]], color="black", lw=2.2, solid_capstyle="butt", zorder=4)
-        ax.plot(i, s["median"], marker="o", color="white", markeredgecolor="black", markersize=5, zorder=5)
-    ax.set_xlim(-0.6, len(order) - 0.4)
-    ax.set_ylim(-0.6, dist["count"].max() + 1)
-    ax.set_xticks(range(len(order)))
-    ax.set_xticklabels([labels[a] for a in order], rotation=35, ha="right")
-    ax.set_ylabel("Number of amenities within 250 m of the charging location")
-    ax.grid(axis="y", linestyle="--", alpha=0.35)
-    # width scale legend
-    ref = int(np.ceil(max_n / 100) * 100 / 2)
-    hx = 0.46 * ref / max_n
-    y_ref = dist["count"].max() - 4.0
-    ax.add_patch(plt.Rectangle((len(order) - 5.0 - hx, y_ref), 2 * hx, 1.0, facecolor="0.5", edgecolor="none"))
-    ax.text(len(order) - 5.0 + hx + 0.15, y_ref + 0.5, f"bar width = {ref} locations with that count", va="center",
-            fontsize=7.5, color="0.3")
-    ax.legend(handles=[Line2D([0], [0], color="black", lw=2.2, label="Interquartile range"),
-                       Line2D([0], [0], marker="o", color="white", markeredgecolor="black", lw=0, markersize=5, label="Median")],
-              loc="upper right", frameon=False)
-    ax.text(0.995, 0.80, f"$n$ = {n_loc:,} charging locations", transform=ax.transAxes, ha="right", fontsize=8, color="0.3")
+        full = pd.Series(0, index=np.arange(0, int(d["count"].max()) + 1))
+        full.loc[d["count"].values] = d["n_locations"].values
+        ax.bar(full.index, full.values, width=0.85, color=col, edgecolor="none", zorder=2)
+        q1, med, q3 = st.loc[a, "q1"], st.loc[a, "median"], st.loc[a, "q3"]
+        ax.axvspan(q1 - 0.5, q3 + 0.5, color="0.5", alpha=0.18, lw=0, zorder=1)
+        ax.axvline(med, color="black", lw=1.4, ls="--", zorder=3)
+        ax.set_title(labels[a], fontsize=10, loc="left", pad=4)
+        ax.text(0.98, 0.95, f"median {med:g}\nIQR {q1:g}\u2013{q3:g}", transform=ax.transAxes, ha="right", va="top",
+                fontsize=8, color="0.25")
+        ax.set_xlim(-0.7, max(full.index.max() + 0.7, 5))
+        ax.set_ylabel("Locations")
+        ax.set_xlabel("Amenities within 250 m (count)")
+        ax.grid(axis="y", linestyle="--", alpha=0.35, zorder=0)
+        ax.margins(y=0.08)
+    for ax in axes[len(order):]:
+        ax.axis("off")
+    axes[len(order)].legend(handles=[Line2D([0], [0], color="black", lw=1.4, ls="--", label="Median"),
+                                     Patch(facecolor="0.5", alpha=0.18, label="Interquartile range")],
+                            loc="center", frameon=False, fontsize=9, title=f"$n$ = {n_loc:,} charging locations",
+                            title_fontsize=9)
+    fig.tight_layout(h_pad=1.8, w_pad=1.5)
     save(fig, "Figure_2")
 
 
