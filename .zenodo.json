@@ -1,0 +1,13 @@
+{
+  "title": "Replication code for: Electric vehicle charging supports local business spending beyond charging revenue",
+  "upload_type": "software",
+  "description": "Python (and R cross-check) code that reproduces every table, figure, Source Data file and Supplementary Data file of Li, Hardman & Jenn, 'Electric vehicle charging supports local business spending beyond charging revenue' (Communications Sustainability), from the analytic survey dataset of 1,586 DC fast charging sessions deposited in Dryad. Includes the two-part hurdle model (logit + OLS with HC3 standard errors), stratified models by reason for charging, amenity-specification robustness checks, charge-duration counterfactuals and a Monte Carlo convergence analysis.",
+  "creators": [
+    {"name": "Li, Jiewei Grant", "affiliation": "Institute of Transportation Studies, University of California, Davis"},
+    {"name": "Hardman, Scott", "affiliation": "Institute of Transportation Studies, University of California, Davis"},
+    {"name": "Jenn, Alan", "affiliation": "Institute of Transportation Studies, University of California, Davis"}
+  ],
+  "keywords": ["electric vehicles", "DC fast charging", "ancillary spending", "two-part hurdle model", "survey"],
+  "license": "MIT",
+  "access_right": "open"
+}

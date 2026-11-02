@@ -1,0 +1,21 @@
+section,variable,column,N,mean,sd,min,q1,median,q3,max
+Demographics,Household Adults (\#),hh_adults,1518,2.1903820816864297,0.7993655168367323,1.0,2.0,2.0,2.0,9.0
+Demographics,Household Children (\#),hh_children,1517,0.5458141067897165,0.9524163211359101,0.0,0.0,0.0,1.0,8.0
+Demographics,Household Income (k\$),income_continuous_number,885,212.28813559322035,140.85891296634628,25.0,125.0,175.0,225.0,525.0
+Demographics,Age (Years),age_continuous_number,1489,59.49966420416387,12.948527790796433,25.0,45.0,55.0,65.0,85.0
+Session \& Vehicle,Session Cost (\$),session_cost,1586,10.39082398928121,11.379739251423365,0.0,0.0,8.0,16.155,67.0
+Session \& Vehicle,Charge Duration (h),charge_duration,1549,0.6096998063266623,0.4762789266830954,0.0,0.3333333333333333,0.5,0.75,5.0
+Session \& Vehicle,Wait Time (h),wait_time,1570,0.04196348195329087,0.16931054619080502,0.0,0.0,0.0,0.0,2.0
+Session \& Vehicle,Battery Capacity (kWh),battery_capacity,1533,77.57808219178082,19.103056649669924,19.0,70.0,75.0,84.0,212.0
+Session \& Vehicle,Distance from Home (mi),distance_from_home,1207,88.66939654832291,244.4658095512234,0.0,6.363462583333334,38.646803909090906,108.40069343939393,2969.411855340909
+"Amenities (250m radius, \#)",Department Store,250m_department_store,1429,2.093771868439468,2.154857576590101,0.0,0.0,2.0,3.0,10.0
+"Amenities (250m radius, \#)",Entertainment,250m_entertainment,1429,0.33869839048285516,0.7340894489833484,0.0,0.0,0.0,0.0,5.0
+"Amenities (250m radius, \#)",Grocery,250m_grocery,1429,1.6361091672498251,1.6445462526684334,0.0,0.0,1.0,3.0,8.0
+"Amenities (250m radius, \#)",Medical,250m_medical,1429,0.9839048285514346,1.4853211821136423,0.0,0.0,0.0,2.0,20.0
+"Amenities (250m radius, \#)",Park,250m_park,1429,0.6263121063680895,1.3474311834458024,0.0,0.0,0.0,1.0,12.0
+"Amenities (250m radius, \#)",Religion,250m_religion,1429,0.489853044086774,1.146724690212493,0.0,0.0,0.0,1.0,14.0
+"Amenities (250m radius, \#)",Restaurant,250m_restaurant,1429,8.515045486354094,6.840833974201654,0.0,3.0,7.0,12.0,29.0
+"Amenities (250m radius, \#)",Restroom (Standalone),250m_standalone_bathroom,1429,0.08117564730580826,0.3045992502088606,0.0,0.0,0.0,0.0,3.0
+"Amenities (250m radius, \#)",Restroom (Co-located),250m_colocated_bathroom,1429,0.7543736878936319,2.250384488484504,0.0,0.0,0.0,0.0,20.0
+"Amenities (250m radius, \#)",Retail,250m_retail,1429,5.8761371588523446,5.090165071964155,0.0,1.0,5.0,9.0,24.0
+"Amenities (250m radius, \#)",Work,250m_work,1429,2.2358292512246325,4.931548623717268,0.0,0.0,0.0,2.0,39.0

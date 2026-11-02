@@ -1,0 +1,24 @@
+cff-version: 1.2.0
+message: "If you use this code, please cite the archived software release (Zenodo DOI)."
+title: "Replication code for: Electric vehicle charging supports local business spending beyond charging revenue"
+type: software
+authors:
+  - family-names: Li
+    given-names: Jiewei Grant
+    affiliation: "Institute of Transportation Studies, University of California, Davis"
+    email: jwgli@ucdavis.edu
+  - family-names: Hardman
+    given-names: Scott
+    affiliation: "Institute of Transportation Studies, University of California, Davis"
+  - family-names: Jenn
+    given-names: Alan
+    affiliation: "Institute of Transportation Studies, University of California, Davis"
+version: 1.0.0
+date-released: 2026-11-01
+repository-code: https://github.com/jieweigrantli/EV-Charging-Local-Business
+license: MIT
+keywords:
+  - electric vehicles
+  - DC fast charging
+  - ancillary spending
+  - two-part hurdle model

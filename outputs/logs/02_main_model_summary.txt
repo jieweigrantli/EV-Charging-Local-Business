@@ -1,0 +1,115 @@
+Extensive margin: binomial GLM (logit), HC3 robust SE
+                   Generalized Linear Model Regression Results                    
+==================================================================================
+Dep. Variable:     store_total_spent_calc   No. Observations:                 1360
+Model:                                GLM   Df Residuals:                     1323
+Model Family:                    Binomial   Df Model:                           36
+Link Function:                      Logit   Scale:                          1.0000
+Method:                              IRLS   Log-Likelihood:                -872.71
+Date:                    Sun, 01 Nov 2026   Deviance:                       1745.4
+Time:                            20:30:03   Pearson chi2:                 1.37e+03
+No. Iterations:                         4   Pseudo R-squ. (CS):            0.05843
+Covariance Type:                      HC3                                         
+=====================================================================================================
+                                        coef    std err          z      P>|z|      [0.025      0.975]
+-----------------------------------------------------------------------------------------------------
+const                                -2.2369      0.738     -3.031      0.002      -3.683      -0.791
+race_asian                           -0.2341      0.171     -1.369      0.171      -0.569       0.101
+race_black                           -0.0923      0.366     -0.252      0.801      -0.810       0.625
+race_hispanic                         0.0604      0.237      0.255      0.799      -0.404       0.525
+gender_female                        -0.1055      0.151     -0.700      0.484      -0.401       0.190
+edu_college                          -0.0703      0.222     -0.316      0.752      -0.505       0.365
+edu_grad                              0.0110      0.222      0.050      0.960      -0.423       0.445
+hh_adults                             0.0734      0.076      0.967      0.333      -0.075       0.222
+hh_children                           0.1464      0.067      2.201      0.028       0.016       0.277
+charge_duration                       0.5204      0.133      3.926      0.000       0.261       0.780
+wait_time                            -0.2096      0.438     -0.479      0.632      -1.068       0.648
+250m_department_store                 0.0458      0.032      1.444      0.149      -0.016       0.108
+250m_entertainment                    0.1502      0.090      1.672      0.094      -0.026       0.326
+250m_grocery                          0.0678      0.041      1.662      0.096      -0.012       0.148
+250m_medical                         -0.0986      0.042     -2.352      0.019      -0.181      -0.016
+250m_park                            -0.0511      0.058     -0.885      0.376      -0.164       0.062
+250m_religion                         0.0005      0.054      0.010      0.992      -0.104       0.105
+250m_restaurant                       0.0026      0.012      0.221      0.825      -0.021       0.026
+250m_standalone_bathroom             -0.4313      0.210     -2.051      0.040      -0.843      -0.019
+250m_colocated_bathroom              -0.0274      0.031     -0.890      0.374      -0.088       0.033
+250m_retail                           0.0002      0.014      0.013      0.989      -0.027       0.028
+250m_work                            -0.0164      0.015     -1.115      0.265      -0.045       0.012
+veh_use_commuting                     0.0973      0.144      0.677      0.499      -0.185       0.379
+veh_use_private                      -0.0548      0.182     -0.301      0.763      -0.412       0.302
+veh_use_business                     -0.1761      0.204     -0.862      0.389      -0.576       0.224
+veh_use_gigecon                       0.5860      0.550      1.065      0.287      -0.493       1.665
+charge_session_reason_long_trip       0.5314      0.177      3.008      0.003       0.185       0.878
+charge_session_reason_opportunity     0.3421      0.165      2.077      0.038       0.019       0.665
+battery_capacity_exist               -0.0847      0.344     -0.246      0.806      -0.759       0.590
+distance_from_home_exist              0.1942      0.171      1.134      0.257      -0.142       0.530
+log_income_continuous_exist           0.1293      0.122      1.063      0.288      -0.109       0.368
+age_continuous_exist                  0.7762      0.545      1.424      0.154      -0.292       1.845
+battery_capacity_centered             0.0095      0.003      2.838      0.005       0.003       0.016
+distance_from_home_log1p_centered     0.0189      0.057      0.334      0.739      -0.092       0.130
+session_cost_log1p_centered           0.0428      0.045      0.947      0.344      -0.046       0.131
+log_income_centered                  -0.0191      0.129     -0.147      0.883      -0.273       0.234
+age_centered                          0.0004      0.006      0.080      0.937      -0.011       0.012
+=====================================================================================================
+
+Intensive margin: OLS on log(1 + spend) | spend > 0, HC3 robust SE
+                              OLS Regression Results                              
+==================================================================================
+Dep. Variable:     store_total_spent_calc   R-squared:                       0.129
+Model:                                OLS   Adj. R-squared:                  0.067
+Method:                     Least Squares   F-statistic:                     1.594
+Date:                    Sun, 01 Nov 2026   Prob (F-statistic):             0.0174
+Time:                            20:30:03   Log-Likelihood:                -775.38
+No. Observations:                     540   AIC:                             1625.
+Df Residuals:                         503   BIC:                             1784.
+Df Model:                              36                                         
+Covariance Type:                      HC3                                         
+=====================================================================================================
+                                        coef    std err          z      P>|z|      [0.025      0.975]
+-----------------------------------------------------------------------------------------------------
+const                                 2.7149      0.469      5.783      0.000       1.795       3.635
+race_asian                            0.1980      0.133      1.488      0.137      -0.063       0.459
+race_black                           -0.2345      0.233     -1.007      0.314      -0.691       0.222
+race_hispanic                         0.0822      0.172      0.477      0.633      -0.255       0.420
+gender_female                         0.2645      0.152      1.740      0.082      -0.034       0.563
+edu_college                           0.0480      0.184      0.261      0.794      -0.312       0.408
+edu_grad                             -0.1248      0.182     -0.684      0.494      -0.482       0.233
+hh_adults                             0.0692      0.057      1.212      0.226      -0.043       0.181
+hh_children                           0.0535      0.050      1.077      0.282      -0.044       0.151
+charge_duration                       0.2603      0.165      1.582      0.114      -0.062       0.583
+wait_time                            -0.0401      0.403     -0.100      0.921      -0.829       0.749
+250m_department_store                 0.0460      0.028      1.635      0.102      -0.009       0.101
+250m_entertainment                   -0.0037      0.085     -0.044      0.965      -0.171       0.163
+250m_grocery                         -0.0381      0.035     -1.104      0.270      -0.106       0.030
+250m_medical                         -0.0223      0.065     -0.342      0.732      -0.150       0.105
+250m_park                            -0.0400      0.059     -0.676      0.499      -0.156       0.076
+250m_religion                         0.0064      0.037      0.172      0.863      -0.066       0.079
+250m_restaurant                       0.0081      0.011      0.729      0.466      -0.014       0.030
+250m_standalone_bathroom              0.1466      0.319      0.459      0.646      -0.479       0.772
+250m_colocated_bathroom               0.0207      0.037      0.558      0.577      -0.052       0.093
+250m_retail                          -0.0012      0.012     -0.095      0.924      -0.025       0.023
+250m_work                             0.0099      0.015      0.657      0.511      -0.020       0.039
+veh_use_commuting                     0.0533      0.125      0.426      0.670      -0.192       0.299
+veh_use_private                       0.0397      0.145      0.274      0.784      -0.245       0.324
+veh_use_business                     -0.2060      0.174     -1.183      0.237      -0.547       0.135
+veh_use_gigecon                      -0.1755      0.599     -0.293      0.769      -1.349       0.998
+charge_session_reason_long_trip      -0.3069      0.174     -1.761      0.078      -0.648       0.035
+charge_session_reason_opportunity     0.1914      0.156      1.226      0.220      -0.115       0.497
+battery_capacity_exist                0.0512      0.252      0.203      0.839      -0.443       0.546
+distance_from_home_exist             -0.1023      0.156     -0.657      0.511      -0.408       0.203
+log_income_continuous_exist          -0.1586      0.102     -1.561      0.119      -0.358       0.041
+age_continuous_exist                  0.2019      0.323      0.624      0.532      -0.432       0.836
+battery_capacity_centered             0.0053      0.003      2.017      0.044       0.000       0.010
+distance_from_home_log1p_centered     0.0264      0.051      0.523      0.601      -0.073       0.125
+session_cost_log1p_centered          -0.0186      0.038     -0.483      0.629      -0.094       0.057
+log_income_centered                   0.1747      0.104      1.677      0.093      -0.029       0.379
+age_centered                          0.0033      0.005      0.705      0.481      -0.006       0.012
+==============================================================================
+Omnibus:                        0.686   Durbin-Watson:                   1.972
+Prob(Omnibus):                  0.710   Jarque-Bera (JB):                0.790
+Skew:                           0.065   Prob(JB):                        0.674
+Kurtosis:                       2.866   Cond. No.                         319.
+==============================================================================
+
+Notes:
+[1] Standard Errors are heteroscedasticity robust (HC3)

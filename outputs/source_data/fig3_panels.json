@@ -1,0 +1,51 @@
+[
+  {
+    "var": "hh_children",
+    "kind": "discrete",
+    "xlabel": "Household children (count)",
+    "p_value": 0.027753580919723613,
+    "n": 1360
+  },
+  {
+    "var": "charge_duration",
+    "kind": "continuous",
+    "xlabel": "Charge duration (hours)",
+    "p_value": 8.63411905614548e-05,
+    "n": 1360
+  },
+  {
+    "var": "250m_medical",
+    "kind": "discrete",
+    "xlabel": "Medical facilities within 250 m (count)",
+    "p_value": 0.018697782105712768,
+    "n": 1360
+  },
+  {
+    "var": "250m_standalone_bathroom",
+    "kind": "discrete",
+    "xlabel": "Standalone restrooms within 250 m (count)",
+    "p_value": 0.04026477311184785,
+    "n": 1360
+  },
+  {
+    "var": "charge_session_reason_long_trip",
+    "kind": "binary",
+    "xlabel": "Charging reason: long trip",
+    "p_value": 0.002625610044596979,
+    "n": 1360
+  },
+  {
+    "var": "charge_session_reason_opportunity",
+    "kind": "binary",
+    "xlabel": "Charging reason: opportunity",
+    "p_value": 0.037812653494528586,
+    "n": 1360
+  },
+  {
+    "var": "battery_capacity_centered",
+    "kind": "continuous",
+    "xlabel": "Battery capacity (kWh, centred at sample mean)",
+    "p_value": 0.004546317173307559,
+    "n": 1360
+  }
+]

@@ -1,0 +1,49 @@
+Metric,Category,Source,Percent,n
+Household income,<$50k,Survey sample,1.92090395480226,885.0
+Household income,$50k-$99k,Survey sample,10.847457627118644,885.0
+Household income,$100k-$149k,Survey sample,25.310734463276834,885.0
+Household income,$150k-$199k,Survey sample,25.423728813559322,885.0
+Household income,$200k+,Survey sample,36.49717514124294,885.0
+Age,18-34,Survey sample,0.0671591672263264,1489.0
+Age,35-44,Survey sample,5.97716588314305,1489.0
+Age,45-54,Survey sample,19.543317662860982,1489.0
+Age,55-64,Survey sample,26.729348556077902,1489.0
+Age,65-74,Survey sample,23.237071860308934,1489.0
+Age,75+,Survey sample,24.445936870382805,1489.0
+Education,<High school,Survey sample,0.06609385327164573,1513.0
+Education,High school/GED,Survey sample,6.67547918043622,1513.0
+Education,Some college/Associate,Survey sample,0.0,1513.0
+Education,Bachelor's,Survey sample,40.84600132187707,1513.0
+Education,Graduate/professional,Survey sample,52.41242564441507,1513.0
+Age,18-34,California EV owners,18.6,
+Age,35-44,California EV owners,24.9,
+Age,45-54,California EV owners,21.0,
+Age,55-64,California EV owners,15.5,
+Age,65-74,California EV owners,14.0,
+Age,75+,California EV owners,6.0,
+Education,<High school,California EV owners,0.8,
+Education,Bachelor's,California EV owners,35.5,
+Education,Graduate/professional,California EV owners,45.6,
+Education,High school/GED,California EV owners,3.8,
+Education,Some college/Associate,California EV owners,14.2,
+Household income,$100k-$149k,California EV owners,21.9,
+Household income,$150k-$199k,California EV owners,21.9,
+Household income,$200k+,California EV owners,41.2,
+Household income,$50k-$99k,California EV owners,11.0,
+Household income,<$50k,California EV owners,3.9,
+Age,18-34,National EV owners,22.3,
+Age,35-44,National EV owners,21.1,
+Age,45-54,National EV owners,25.5,
+Age,55-64,National EV owners,13.2,
+Age,65-74,National EV owners,13.0,
+Age,75+,National EV owners,4.9,
+Education,<High school,National EV owners,1.4,
+Education,Bachelor's,National EV owners,29.6,
+Education,Graduate/professional,National EV owners,46.1,
+Education,High school/GED,National EV owners,5.9,
+Education,Some college/Associate,National EV owners,17.0,
+Household income,$100k-$149k,National EV owners,17.6,
+Household income,$150k-$199k,National EV owners,19.2,
+Household income,$200k+,National EV owners,38.3,
+Household income,$50k-$99k,National EV owners,20.9,
+Household income,<$50k,National EV owners,4.0,

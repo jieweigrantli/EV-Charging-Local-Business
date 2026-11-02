@@ -1,0 +1,848 @@
+reason,store_type,store_slot,amount
+Opportunity,Café/Restaurant/Bar,store,8.0
+Opportunity,Café/Restaurant/Bar,store,12.0
+Opportunity,Café/Restaurant/Bar,store,7.0
+Opportunity,Café/Restaurant/Bar,store,2.0
+Opportunity,Café/Restaurant/Bar,store,20.0
+Opportunity,Café/Restaurant/Bar,store,10.0
+Opportunity,Café/Restaurant/Bar,store,40.0
+Opportunity,Café/Restaurant/Bar,store,5.0
+Opportunity,Café/Restaurant/Bar,store,20.0
+Opportunity,Café/Restaurant/Bar,store,50.0
+Opportunity,Café/Restaurant/Bar,store,7.0
+Opportunity,Café/Restaurant/Bar,store,30.0
+Opportunity,Café/Restaurant/Bar,store,5.0
+Opportunity,Café/Restaurant/Bar,store,3.0
+Opportunity,Café/Restaurant/Bar,store,10.0
+Opportunity,Café/Restaurant/Bar,store,15.0
+Opportunity,Café/Restaurant/Bar,store,4.0
+Opportunity,Café/Restaurant/Bar,store,40.0
+Opportunity,Café/Restaurant/Bar,store,10.0
+Opportunity,Café/Restaurant/Bar,store,289.0
+Opportunity,Café/Restaurant/Bar,store,2.0
+Opportunity,Café/Restaurant/Bar,store,30.0
+Opportunity,Café/Restaurant/Bar,store,6.0
+Opportunity,Café/Restaurant/Bar,store,30.0
+Opportunity,Café/Restaurant/Bar,store,15.0
+Opportunity,Café/Restaurant/Bar,store,0.0
+Opportunity,Café/Restaurant/Bar,store,20.0
+Opportunity,Café/Restaurant/Bar,store,20.0
+Opportunity,Café/Restaurant/Bar,store,15.0
+Opportunity,Café/Restaurant/Bar,store,10.0
+Opportunity,Café/Restaurant/Bar,store,40.0
+Opportunity,Café/Restaurant/Bar,store,10.0
+Opportunity,Café/Restaurant/Bar,store,15.0
+Opportunity,Café/Restaurant/Bar,store,100.0
+Opportunity,Café/Restaurant/Bar,store,48.0
+Opportunity,Café/Restaurant/Bar,store,0.0
+Opportunity,Café/Restaurant/Bar,store,0.0
+Opportunity,Café/Restaurant/Bar,store,12.0
+Opportunity,Café/Restaurant/Bar,store,5.0
+Opportunity,Café/Restaurant/Bar,store,0.0
+Opportunity,Café/Restaurant/Bar,store,15.56
+Opportunity,Café/Restaurant/Bar,store,100.0
+Opportunity,Café/Restaurant/Bar,store,25.0
+Opportunity,Café/Restaurant/Bar,store,50.0
+Opportunity,Café/Restaurant/Bar,store,10.0
+Opportunity,Café/Restaurant/Bar,store,14.0
+Opportunity,Café/Restaurant/Bar,store,20.0
+Opportunity,Café/Restaurant/Bar,store,5.0
+Opportunity,Café/Restaurant/Bar,store,35.0
+Opportunity,Café/Restaurant/Bar,store,15.0
+Opportunity,Café/Restaurant/Bar,store,5.0
+Opportunity,Café/Restaurant/Bar,store,12.0
+Opportunity,Café/Restaurant/Bar,store,200.0
+Opportunity,Café/Restaurant/Bar,store,9.0
+Opportunity,Café/Restaurant/Bar,store,45.0
+Opportunity,Café/Restaurant/Bar,store,30.0
+Opportunity,Café/Restaurant/Bar,store,5.0
+Opportunity,Café/Restaurant/Bar,store,2.0
+Opportunity,Café/Restaurant/Bar,store2,10.0
+Opportunity,Café/Restaurant/Bar,store2,5.0
+Opportunity,Café/Restaurant/Bar,store2,15.0
+Opportunity,Café/Restaurant/Bar,store2,20.0
+Opportunity,Café/Restaurant/Bar,store2,0.0
+Opportunity,Café/Restaurant/Bar,store2,3.0
+Opportunity,Café/Restaurant/Bar,store2,10.0
+Opportunity,Café/Restaurant/Bar,store2,12.0
+Opportunity,Café/Restaurant/Bar,store2,15.0
+Opportunity,Café/Restaurant/Bar,store2,0.0
+Opportunity,Café/Restaurant/Bar,store2,15.0
+Opportunity,Café/Restaurant/Bar,store2,50.0
+Opportunity,Café/Restaurant/Bar,store2,5.0
+Opportunity,Place of Work/Study,store,30.0
+Opportunity,Place of Work/Study,store,3.0
+Opportunity,Place of Work/Study,store,15.0
+Opportunity,Place of Work/Study,store2,0.0
+Opportunity,Retail/Clothing Store,store,0.0
+Opportunity,Retail/Clothing Store,store,200.0
+Opportunity,Retail/Clothing Store,store,12.0
+Opportunity,Retail/Clothing Store,store,0.0
+Opportunity,Retail/Clothing Store,store,30.0
+Opportunity,Retail/Clothing Store,store,2.0
+Opportunity,Retail/Clothing Store,store,0.0
+Opportunity,Retail/Clothing Store,store,0.0
+Opportunity,Retail/Clothing Store,store,0.0
+Opportunity,Retail/Clothing Store,store,60.0
+Opportunity,Retail/Clothing Store,store,0.0
+Opportunity,Retail/Clothing Store,store,200.0
+Opportunity,Retail/Clothing Store,store,50.0
+Opportunity,Retail/Clothing Store,store,0.0
+Opportunity,Retail/Clothing Store,store,50.0
+Opportunity,Retail/Clothing Store,store,25.0
+Opportunity,Retail/Clothing Store,store,0.0
+Opportunity,Retail/Clothing Store,store,1100.0
+Opportunity,Retail/Clothing Store,store,25.0
+Opportunity,Retail/Clothing Store,store,0.0
+Opportunity,Retail/Clothing Store,store,50.0
+Opportunity,Retail/Clothing Store,store,35.0
+Opportunity,Retail/Clothing Store,store,120.0
+Opportunity,Retail/Clothing Store,store,15.0
+Opportunity,Retail/Clothing Store,store,100.0
+Opportunity,Retail/Clothing Store,store,30.0
+Opportunity,Retail/Clothing Store,store2,300.0
+Opportunity,Retail/Clothing Store,store2,200.0
+Opportunity,Retail/Clothing Store,store2,0.0
+Opportunity,Retail/Clothing Store,store2,0.0
+Opportunity,Retail/Clothing Store,store2,0.0
+Opportunity,Retail/Clothing Store,store2,80.0
+Opportunity,Retail/Clothing Store,store2,30.0
+Opportunity,Retail/Clothing Store,store2,150.0
+Opportunity,Retail/Clothing Store,store2,80.0
+Opportunity,Retail/Clothing Store,store2,10.0
+Opportunity,Retail/Clothing Store,store2,0.0
+Opportunity,Retail/Clothing Store,store2,15.0
+Opportunity,Grocery Store,store,60.0
+Opportunity,Grocery Store,store,0.0
+Opportunity,Grocery Store,store,12.0
+Opportunity,Grocery Store,store,190.0
+Opportunity,Grocery Store,store,75.0
+Opportunity,Grocery Store,store,0.0
+Opportunity,Grocery Store,store,54.0
+Opportunity,Grocery Store,store,90.0
+Opportunity,Grocery Store,store,27.0
+Opportunity,Grocery Store,store,80.0
+Opportunity,Grocery Store,store,25.0
+Opportunity,Grocery Store,store,60.0
+Opportunity,Grocery Store,store,50.0
+Opportunity,Grocery Store,store,10.0
+Opportunity,Grocery Store,store,100.0
+Opportunity,Grocery Store,store,12.0
+Opportunity,Grocery Store,store,35.0
+Opportunity,Grocery Store,store,15.0
+Opportunity,Grocery Store,store,9.99
+Opportunity,Grocery Store,store,25.0
+Opportunity,Grocery Store,store,300.0
+Opportunity,Grocery Store,store,0.0
+Opportunity,Grocery Store,store,150.0
+Opportunity,Grocery Store,store,90.0
+Opportunity,Grocery Store,store,40.0
+Opportunity,Grocery Store,store,0.0
+Opportunity,Grocery Store,store,16.0
+Opportunity,Grocery Store,store,100.0
+Opportunity,Grocery Store,store,35.0
+Opportunity,Grocery Store,store,50.0
+Opportunity,Grocery Store,store,30.0
+Opportunity,Grocery Store,store,0.0
+Opportunity,Grocery Store,store,158.0
+Opportunity,Grocery Store,store,0.0
+Opportunity,Grocery Store,store,15.0
+Opportunity,Grocery Store,store,100.0
+Opportunity,Grocery Store,store,48.0
+Opportunity,Grocery Store,store,30.0
+Opportunity,Grocery Store,store2,0.0
+Opportunity,Grocery Store,store2,0.0
+Opportunity,Grocery Store,store2,0.0
+Opportunity,Grocery Store,store2,40.0
+Opportunity,Grocery Store,store2,200.0
+Opportunity,Grocery Store,store2,30.0
+Opportunity,Grocery Store,store2,6.0
+Opportunity,Grocery Store,store2,20.0
+Opportunity,Grocery Store,store2,15.0
+Opportunity,Grocery Store,store2,15.0
+Opportunity,Department/Big Box Store,store,13.0
+Opportunity,Department/Big Box Store,store,0.0
+Opportunity,Department/Big Box Store,store,30.0
+Opportunity,Department/Big Box Store,store,150.0
+Opportunity,Department/Big Box Store,store,501.0
+Opportunity,Department/Big Box Store,store,100.0
+Opportunity,Department/Big Box Store,store,40.0
+Opportunity,Department/Big Box Store,store,18.0
+Opportunity,Department/Big Box Store,store,100.0
+Opportunity,Department/Big Box Store,store,60.0
+Opportunity,Department/Big Box Store,store,10.0
+Opportunity,Department/Big Box Store,store,300.0
+Opportunity,Department/Big Box Store,store,100.0
+Opportunity,Department/Big Box Store,store,250.0
+Opportunity,Department/Big Box Store,store,50.0
+Opportunity,Department/Big Box Store,store,8.0
+Opportunity,Department/Big Box Store,store,10.0
+Opportunity,Department/Big Box Store,store,15.0
+Opportunity,Department/Big Box Store,store,45.0
+Opportunity,Department/Big Box Store,store,100.0
+Opportunity,Department/Big Box Store,store2,0.0
+Opportunity,Department/Big Box Store,store2,5.0
+Opportunity,Department/Big Box Store,store2,79.0
+Opportunity,Department/Big Box Store,store2,45.0
+Opportunity,Department/Big Box Store,store2,15.0
+Opportunity,Department/Big Box Store,store2,45.0
+Opportunity,Medical/Dental Facility,store,5.0
+Opportunity,Medical/Dental Facility,store,15.0
+Opportunity,Medical/Dental Facility,store2,15.0
+Opportunity,Cinema/Theatre/Entertainment,store,0.0
+Opportunity,Cinema/Theatre/Entertainment,store,25.0
+Opportunity,Cinema/Theatre/Entertainment,store,15.0
+Opportunity,Cinema/Theatre/Entertainment,store,60.0
+Opportunity,Cinema/Theatre/Entertainment,store2,9.0
+Opportunity,Cinema/Theatre/Entertainment,store2,0.0
+Opportunity,Cinema/Theatre/Entertainment,store2,0.0
+Opportunity,Cinema/Theatre/Entertainment,store2,15.0
+Opportunity,Other,store,10.0
+Opportunity,Other,store,0.0
+Opportunity,Other,store,0.0
+Opportunity,Other,store,15.0
+Opportunity,Other,store,15.0
+Opportunity,Other,store,120.0
+Opportunity,Other,store,0.0
+Opportunity,Other,store,150.0
+Opportunity,Other,store,399.0
+Opportunity,Other,store,30.0
+Opportunity,Other,store,0.0
+Opportunity,Other,store,150.0
+Opportunity,Other,store,10.0
+Opportunity,Other,store2,15.0
+Opportunity,Other,store2,5.0
+Opportunity,Other,store2,22.0
+Opportunity,Other,store2,10.0
+Opportunity,Other,store2,40.0
+Opportunity,Other,store2,10.0
+Long Trip,Café/Restaurant/Bar,store,12.0
+Long Trip,Café/Restaurant/Bar,store,0.0
+Long Trip,Café/Restaurant/Bar,store,10.0
+Long Trip,Café/Restaurant/Bar,store,20.0
+Long Trip,Café/Restaurant/Bar,store,4.0
+Long Trip,Café/Restaurant/Bar,store,4.0
+Long Trip,Café/Restaurant/Bar,store,3.0
+Long Trip,Café/Restaurant/Bar,store,8.0
+Long Trip,Café/Restaurant/Bar,store,4.0
+Long Trip,Café/Restaurant/Bar,store,20.0
+Long Trip,Café/Restaurant/Bar,store,20.0
+Long Trip,Café/Restaurant/Bar,store,20.0
+Long Trip,Café/Restaurant/Bar,store,15.0
+Long Trip,Café/Restaurant/Bar,store,45.0
+Long Trip,Café/Restaurant/Bar,store,40.0
+Long Trip,Café/Restaurant/Bar,store,12.0
+Long Trip,Café/Restaurant/Bar,store,10.0
+Long Trip,Café/Restaurant/Bar,store,7.0
+Long Trip,Café/Restaurant/Bar,store,10.0
+Long Trip,Café/Restaurant/Bar,store,8.0
+Long Trip,Café/Restaurant/Bar,store,40.0
+Long Trip,Café/Restaurant/Bar,store,20.0
+Long Trip,Café/Restaurant/Bar,store,7.0
+Long Trip,Café/Restaurant/Bar,store,50.0
+Long Trip,Café/Restaurant/Bar,store,20.0
+Long Trip,Café/Restaurant/Bar,store,20.0
+Long Trip,Café/Restaurant/Bar,store,35.0
+Long Trip,Café/Restaurant/Bar,store,50.0
+Long Trip,Café/Restaurant/Bar,store,12.0
+Long Trip,Café/Restaurant/Bar,store,80.0
+Long Trip,Café/Restaurant/Bar,store,10.0
+Long Trip,Café/Restaurant/Bar,store,18.0
+Long Trip,Café/Restaurant/Bar,store,10.0
+Long Trip,Café/Restaurant/Bar,store,15.0
+Long Trip,Café/Restaurant/Bar,store,30.0
+Long Trip,Café/Restaurant/Bar,store,15.0
+Long Trip,Café/Restaurant/Bar,store,0.0
+Long Trip,Café/Restaurant/Bar,store,50.0
+Long Trip,Café/Restaurant/Bar,store,10.0
+Long Trip,Café/Restaurant/Bar,store,20.0
+Long Trip,Café/Restaurant/Bar,store,40.0
+Long Trip,Café/Restaurant/Bar,store,25.0
+Long Trip,Café/Restaurant/Bar,store,20.0
+Long Trip,Café/Restaurant/Bar,store,90.0
+Long Trip,Café/Restaurant/Bar,store,0.0
+Long Trip,Café/Restaurant/Bar,store,7.0
+Long Trip,Café/Restaurant/Bar,store,25.0
+Long Trip,Café/Restaurant/Bar,store,35.0
+Long Trip,Café/Restaurant/Bar,store,60.0
+Long Trip,Café/Restaurant/Bar,store,5.0
+Long Trip,Café/Restaurant/Bar,store,0.0
+Long Trip,Café/Restaurant/Bar,store,28.0
+Long Trip,Café/Restaurant/Bar,store,10.0
+Long Trip,Café/Restaurant/Bar,store,5.0
+Long Trip,Café/Restaurant/Bar,store,12.0
+Long Trip,Café/Restaurant/Bar,store,25.0
+Long Trip,Café/Restaurant/Bar,store,12.0
+Long Trip,Café/Restaurant/Bar,store,100.0
+Long Trip,Café/Restaurant/Bar,store,15.0
+Long Trip,Café/Restaurant/Bar,store,45.0
+Long Trip,Café/Restaurant/Bar,store,25.0
+Long Trip,Café/Restaurant/Bar,store,20.0
+Long Trip,Café/Restaurant/Bar,store,63.0
+Long Trip,Café/Restaurant/Bar,store,50.0
+Long Trip,Café/Restaurant/Bar,store,65.0
+Long Trip,Café/Restaurant/Bar,store,20.0
+Long Trip,Café/Restaurant/Bar,store,15.0
+Long Trip,Café/Restaurant/Bar,store,0.0
+Long Trip,Café/Restaurant/Bar,store,30.0
+Long Trip,Café/Restaurant/Bar,store,5.0
+Long Trip,Café/Restaurant/Bar,store,30.0
+Long Trip,Café/Restaurant/Bar,store,15.0
+Long Trip,Café/Restaurant/Bar,store,10.0
+Long Trip,Café/Restaurant/Bar,store,50.0
+Long Trip,Café/Restaurant/Bar,store,9.0
+Long Trip,Café/Restaurant/Bar,store,15.0
+Long Trip,Café/Restaurant/Bar,store,11.0
+Long Trip,Café/Restaurant/Bar,store,25.0
+Long Trip,Café/Restaurant/Bar,store,15.0
+Long Trip,Café/Restaurant/Bar,store,60.0
+Long Trip,Café/Restaurant/Bar,store,15.0
+Long Trip,Café/Restaurant/Bar,store,15.0
+Long Trip,Café/Restaurant/Bar,store,20.0
+Long Trip,Café/Restaurant/Bar,store,60.0
+Long Trip,Café/Restaurant/Bar,store,12.0
+Long Trip,Café/Restaurant/Bar,store,20.0
+Long Trip,Café/Restaurant/Bar,store,60.0
+Long Trip,Café/Restaurant/Bar,store,15.0
+Long Trip,Café/Restaurant/Bar,store,10.0
+Long Trip,Café/Restaurant/Bar,store,40.0
+Long Trip,Café/Restaurant/Bar,store,10.0
+Long Trip,Café/Restaurant/Bar,store,8.0
+Long Trip,Café/Restaurant/Bar,store,0.0
+Long Trip,Café/Restaurant/Bar,store,45.0
+Long Trip,Café/Restaurant/Bar,store,12.0
+Long Trip,Café/Restaurant/Bar,store,30.0
+Long Trip,Café/Restaurant/Bar,store,30.0
+Long Trip,Café/Restaurant/Bar,store,25.0
+Long Trip,Café/Restaurant/Bar,store,15.0
+Long Trip,Café/Restaurant/Bar,store,15.0
+Long Trip,Café/Restaurant/Bar,store,4.0
+Long Trip,Café/Restaurant/Bar,store,2.0
+Long Trip,Café/Restaurant/Bar,store,50.0
+Long Trip,Café/Restaurant/Bar,store,5.0
+Long Trip,Café/Restaurant/Bar,store,50.0
+Long Trip,Café/Restaurant/Bar,store,6.0
+Long Trip,Café/Restaurant/Bar,store,0.0
+Long Trip,Café/Restaurant/Bar,store,10.0
+Long Trip,Café/Restaurant/Bar,store,7.0
+Long Trip,Café/Restaurant/Bar,store,20.0
+Long Trip,Café/Restaurant/Bar,store,20.0
+Long Trip,Café/Restaurant/Bar,store,20.0
+Long Trip,Café/Restaurant/Bar,store,30.0
+Long Trip,Café/Restaurant/Bar,store,20.0
+Long Trip,Café/Restaurant/Bar,store,40.0
+Long Trip,Café/Restaurant/Bar,store,8.0
+Long Trip,Café/Restaurant/Bar,store,20.0
+Long Trip,Café/Restaurant/Bar,store,20.0
+Long Trip,Café/Restaurant/Bar,store,20.0
+Long Trip,Café/Restaurant/Bar,store,12.0
+Long Trip,Café/Restaurant/Bar,store,35.0
+Long Trip,Café/Restaurant/Bar,store,5.0
+Long Trip,Café/Restaurant/Bar,store,40.0
+Long Trip,Café/Restaurant/Bar,store,100.0
+Long Trip,Café/Restaurant/Bar,store,20.0
+Long Trip,Café/Restaurant/Bar,store,18.0
+Long Trip,Café/Restaurant/Bar,store,10.0
+Long Trip,Café/Restaurant/Bar,store,40.0
+Long Trip,Café/Restaurant/Bar,store,10.0
+Long Trip,Café/Restaurant/Bar,store,20.0
+Long Trip,Café/Restaurant/Bar,store,20.0
+Long Trip,Café/Restaurant/Bar,store,20.0
+Long Trip,Café/Restaurant/Bar,store,30.0
+Long Trip,Café/Restaurant/Bar,store,10.0
+Long Trip,Café/Restaurant/Bar,store,5.0
+Long Trip,Café/Restaurant/Bar,store,5.0
+Long Trip,Café/Restaurant/Bar,store,15.0
+Long Trip,Café/Restaurant/Bar,store,15.0
+Long Trip,Café/Restaurant/Bar,store,75.0
+Long Trip,Café/Restaurant/Bar,store,10.0
+Long Trip,Café/Restaurant/Bar,store,5.0
+Long Trip,Café/Restaurant/Bar,store,35.0
+Long Trip,Café/Restaurant/Bar,store,7.0
+Long Trip,Café/Restaurant/Bar,store,20.0
+Long Trip,Café/Restaurant/Bar,store,20.0
+Long Trip,Café/Restaurant/Bar,store,5.0
+Long Trip,Café/Restaurant/Bar,store,7.0
+Long Trip,Café/Restaurant/Bar,store,14.0
+Long Trip,Café/Restaurant/Bar,store,10.0
+Long Trip,Café/Restaurant/Bar,store,8.0
+Long Trip,Café/Restaurant/Bar,store,25.0
+Long Trip,Café/Restaurant/Bar,store,0.0
+Long Trip,Café/Restaurant/Bar,store,4.0
+Long Trip,Café/Restaurant/Bar,store,6.0
+Long Trip,Café/Restaurant/Bar,store,20.0
+Long Trip,Café/Restaurant/Bar,store,6.0
+Long Trip,Café/Restaurant/Bar,store,100.0
+Long Trip,Café/Restaurant/Bar,store,20.0
+Long Trip,Café/Restaurant/Bar,store,12.0
+Long Trip,Café/Restaurant/Bar,store,10.0
+Long Trip,Café/Restaurant/Bar,store,30.0
+Long Trip,Café/Restaurant/Bar,store,0.0
+Long Trip,Café/Restaurant/Bar,store,25.0
+Long Trip,Café/Restaurant/Bar,store,11.0
+Long Trip,Café/Restaurant/Bar,store,15.0
+Long Trip,Café/Restaurant/Bar,store,18.0
+Long Trip,Café/Restaurant/Bar,store,12.0
+Long Trip,Café/Restaurant/Bar,store,20.0
+Long Trip,Café/Restaurant/Bar,store,20.0
+Long Trip,Café/Restaurant/Bar,store,25.0
+Long Trip,Café/Restaurant/Bar,store,25.0
+Long Trip,Café/Restaurant/Bar,store,34.0
+Long Trip,Café/Restaurant/Bar,store,10.0
+Long Trip,Café/Restaurant/Bar,store,10.0
+Long Trip,Café/Restaurant/Bar,store,5.0
+Long Trip,Café/Restaurant/Bar,store,3.25
+Long Trip,Café/Restaurant/Bar,store,5.0
+Long Trip,Café/Restaurant/Bar,store,15.0
+Long Trip,Café/Restaurant/Bar,store,65.0
+Long Trip,Café/Restaurant/Bar,store,20.0
+Long Trip,Café/Restaurant/Bar,store,20.0
+Long Trip,Café/Restaurant/Bar,store,12.0
+Long Trip,Café/Restaurant/Bar,store,20.0
+Long Trip,Café/Restaurant/Bar,store,36.0
+Long Trip,Café/Restaurant/Bar,store,5.0
+Long Trip,Café/Restaurant/Bar,store,3.3
+Long Trip,Café/Restaurant/Bar,store,20.0
+Long Trip,Café/Restaurant/Bar,store,10.0
+Long Trip,Café/Restaurant/Bar,store,10.0
+Long Trip,Café/Restaurant/Bar,store,5.0
+Long Trip,Café/Restaurant/Bar,store,150.0
+Long Trip,Café/Restaurant/Bar,store,120.0
+Long Trip,Café/Restaurant/Bar,store,10.0
+Long Trip,Café/Restaurant/Bar,store,100.0
+Long Trip,Café/Restaurant/Bar,store,13.95
+Long Trip,Café/Restaurant/Bar,store,50.0
+Long Trip,Café/Restaurant/Bar,store,15.0
+Long Trip,Café/Restaurant/Bar,store,84.0
+Long Trip,Café/Restaurant/Bar,store,6.45
+Long Trip,Café/Restaurant/Bar,store,20.0
+Long Trip,Café/Restaurant/Bar,store,6.0
+Long Trip,Café/Restaurant/Bar,store,60.0
+Long Trip,Café/Restaurant/Bar,store,12.0
+Long Trip,Café/Restaurant/Bar,store,12.0
+Long Trip,Café/Restaurant/Bar,store,60.0
+Long Trip,Café/Restaurant/Bar,store,39.0
+Long Trip,Café/Restaurant/Bar,store,30.0
+Long Trip,Café/Restaurant/Bar,store,50.0
+Long Trip,Café/Restaurant/Bar,store,30.0
+Long Trip,Café/Restaurant/Bar,store,50.0
+Long Trip,Café/Restaurant/Bar,store,50.0
+Long Trip,Café/Restaurant/Bar,store,15.0
+Long Trip,Café/Restaurant/Bar,store,8.0
+Long Trip,Café/Restaurant/Bar,store,27.15
+Long Trip,Café/Restaurant/Bar,store,75.0
+Long Trip,Café/Restaurant/Bar,store,3.0
+Long Trip,Café/Restaurant/Bar,store,2.79
+Long Trip,Café/Restaurant/Bar,store,15.0
+Long Trip,Café/Restaurant/Bar,store2,0.0
+Long Trip,Café/Restaurant/Bar,store2,10.0
+Long Trip,Café/Restaurant/Bar,store2,10.0
+Long Trip,Café/Restaurant/Bar,store2,12.0
+Long Trip,Café/Restaurant/Bar,store2,10.0
+Long Trip,Café/Restaurant/Bar,store2,30.0
+Long Trip,Café/Restaurant/Bar,store2,5.0
+Long Trip,Café/Restaurant/Bar,store2,16.0
+Long Trip,Café/Restaurant/Bar,store2,20.0
+Long Trip,Café/Restaurant/Bar,store2,30.0
+Long Trip,Café/Restaurant/Bar,store2,6.0
+Long Trip,Café/Restaurant/Bar,store2,10.0
+Long Trip,Café/Restaurant/Bar,store2,5.0
+Long Trip,Café/Restaurant/Bar,store2,20.0
+Long Trip,Café/Restaurant/Bar,store2,6.0
+Long Trip,Café/Restaurant/Bar,store2,15.0
+Long Trip,Café/Restaurant/Bar,store2,0.0
+Long Trip,Café/Restaurant/Bar,store2,15.0
+Long Trip,Café/Restaurant/Bar,store2,6.0
+Long Trip,Café/Restaurant/Bar,store2,75.0
+Long Trip,Café/Restaurant/Bar,store2,10.0
+Long Trip,Café/Restaurant/Bar,store2,20.0
+Long Trip,Café/Restaurant/Bar,store2,10.0
+Long Trip,Café/Restaurant/Bar,store2,4.0
+Long Trip,Café/Restaurant/Bar,store2,10.0
+Long Trip,Café/Restaurant/Bar,store2,8.0
+Long Trip,Café/Restaurant/Bar,store2,12.0
+Long Trip,Café/Restaurant/Bar,store2,27.0
+Long Trip,Café/Restaurant/Bar,store2,150.0
+Long Trip,Café/Restaurant/Bar,store2,20.0
+Long Trip,Café/Restaurant/Bar,store2,15.0
+Long Trip,Place of Work/Study,store,50.0
+Long Trip,Place of Work/Study,store,15.0
+Long Trip,Retail/Clothing Store,store,0.0
+Long Trip,Retail/Clothing Store,store,70.0
+Long Trip,Retail/Clothing Store,store,120.0
+Long Trip,Retail/Clothing Store,store,10.0
+Long Trip,Retail/Clothing Store,store,50.0
+Long Trip,Retail/Clothing Store,store,200.0
+Long Trip,Retail/Clothing Store,store,100.0
+Long Trip,Retail/Clothing Store,store,150.0
+Long Trip,Retail/Clothing Store,store,0.0
+Long Trip,Retail/Clothing Store,store,0.0
+Long Trip,Retail/Clothing Store,store,35.0
+Long Trip,Retail/Clothing Store,store,0.0
+Long Trip,Retail/Clothing Store,store,50.0
+Long Trip,Retail/Clothing Store,store,50.0
+Long Trip,Retail/Clothing Store,store,12.0
+Long Trip,Retail/Clothing Store,store,125.0
+Long Trip,Retail/Clothing Store,store,3.0
+Long Trip,Retail/Clothing Store,store,80.0
+Long Trip,Retail/Clothing Store,store,30.0
+Long Trip,Retail/Clothing Store,store,35.0
+Long Trip,Retail/Clothing Store,store,0.0
+Long Trip,Retail/Clothing Store,store,50.0
+Long Trip,Retail/Clothing Store,store,80.0
+Long Trip,Retail/Clothing Store,store,38.0
+Long Trip,Retail/Clothing Store,store,15.0
+Long Trip,Retail/Clothing Store,store,20.0
+Long Trip,Retail/Clothing Store,store,70.0
+Long Trip,Retail/Clothing Store,store,30.0
+Long Trip,Retail/Clothing Store,store,20.0
+Long Trip,Retail/Clothing Store,store,0.0
+Long Trip,Retail/Clothing Store,store,25.0
+Long Trip,Retail/Clothing Store,store,12.0
+Long Trip,Retail/Clothing Store,store,0.0
+Long Trip,Retail/Clothing Store,store,0.0
+Long Trip,Retail/Clothing Store,store,0.0
+Long Trip,Retail/Clothing Store,store,20.0
+Long Trip,Retail/Clothing Store,store,0.0
+Long Trip,Retail/Clothing Store,store,35.0
+Long Trip,Retail/Clothing Store,store,150.0
+Long Trip,Retail/Clothing Store,store,200.0
+Long Trip,Retail/Clothing Store,store,0.0
+Long Trip,Retail/Clothing Store,store,0.0
+Long Trip,Retail/Clothing Store,store,0.0
+Long Trip,Retail/Clothing Store,store,15.0
+Long Trip,Retail/Clothing Store,store,300.0
+Long Trip,Retail/Clothing Store,store,0.0
+Long Trip,Retail/Clothing Store,store,39.0
+Long Trip,Retail/Clothing Store,store,5.0
+Long Trip,Retail/Clothing Store,store,0.0
+Long Trip,Retail/Clothing Store,store,50.0
+Long Trip,Retail/Clothing Store,store2,0.0
+Long Trip,Retail/Clothing Store,store2,0.0
+Long Trip,Retail/Clothing Store,store2,20.0
+Long Trip,Retail/Clothing Store,store2,10.0
+Long Trip,Retail/Clothing Store,store2,0.0
+Long Trip,Retail/Clothing Store,store2,0.0
+Long Trip,Retail/Clothing Store,store2,0.0
+Long Trip,Retail/Clothing Store,store2,0.0
+Long Trip,Retail/Clothing Store,store2,100.0
+Long Trip,Retail/Clothing Store,store2,0.0
+Long Trip,Retail/Clothing Store,store2,0.0
+Long Trip,Retail/Clothing Store,store2,135.0
+Long Trip,Retail/Clothing Store,store2,50.0
+Long Trip,Retail/Clothing Store,store2,25.0
+Long Trip,Retail/Clothing Store,store2,40.0
+Long Trip,Retail/Clothing Store,store2,0.0
+Long Trip,Retail/Clothing Store,store2,0.0
+Long Trip,Retail/Clothing Store,store2,5.0
+Long Trip,Retail/Clothing Store,store2,25.0
+Long Trip,Retail/Clothing Store,store2,0.0
+Long Trip,Retail/Clothing Store,store2,120.0
+Long Trip,Retail/Clothing Store,store2,15.0
+Long Trip,Retail/Clothing Store,store2,0.0
+Long Trip,Retail/Clothing Store,store2,0.0
+Long Trip,Grocery Store,store,20.0
+Long Trip,Grocery Store,store,5.0
+Long Trip,Grocery Store,store,45.0
+Long Trip,Grocery Store,store,20.0
+Long Trip,Grocery Store,store,0.0
+Long Trip,Grocery Store,store,90.0
+Long Trip,Grocery Store,store,0.0
+Long Trip,Grocery Store,store,20.0
+Long Trip,Grocery Store,store,5.0
+Long Trip,Grocery Store,store,15.0
+Long Trip,Grocery Store,store,0.0
+Long Trip,Grocery Store,store,10.0
+Long Trip,Grocery Store,store,10.0
+Long Trip,Grocery Store,store,20.0
+Long Trip,Grocery Store,store,0.0
+Long Trip,Grocery Store,store,0.0
+Long Trip,Grocery Store,store,30.0
+Long Trip,Grocery Store,store,5.0
+Long Trip,Grocery Store,store,10.0
+Long Trip,Grocery Store,store,0.0
+Long Trip,Grocery Store,store,2.5
+Long Trip,Grocery Store,store,40.0
+Long Trip,Grocery Store,store,50.0
+Long Trip,Grocery Store,store,5.0
+Long Trip,Grocery Store,store,30.0
+Long Trip,Grocery Store,store,20.0
+Long Trip,Grocery Store,store,50.0
+Long Trip,Grocery Store,store,40.0
+Long Trip,Grocery Store,store,10.0
+Long Trip,Grocery Store,store,30.0
+Long Trip,Grocery Store,store,0.0
+Long Trip,Grocery Store,store,2.0
+Long Trip,Grocery Store,store,15.0
+Long Trip,Grocery Store,store,0.0
+Long Trip,Grocery Store,store,25.0
+Long Trip,Grocery Store,store,12.0
+Long Trip,Grocery Store,store,3.25
+Long Trip,Grocery Store,store,10.0
+Long Trip,Grocery Store,store,5.0
+Long Trip,Grocery Store,store,100.0
+Long Trip,Grocery Store,store,0.0
+Long Trip,Grocery Store,store,20.0
+Long Trip,Grocery Store,store,0.0
+Long Trip,Grocery Store,store,10.0
+Long Trip,Grocery Store,store,12.0
+Long Trip,Grocery Store,store,18.0
+Long Trip,Grocery Store,store,0.0
+Long Trip,Grocery Store,store,5.0
+Long Trip,Grocery Store,store,20.0
+Long Trip,Grocery Store,store,0.0
+Long Trip,Grocery Store,store,4.5
+Long Trip,Grocery Store,store,8.0
+Long Trip,Grocery Store,store,200.0
+Long Trip,Grocery Store,store,0.0
+Long Trip,Grocery Store,store,250.0
+Long Trip,Grocery Store,store,10.0
+Long Trip,Grocery Store,store,15.0
+Long Trip,Grocery Store,store,5.0
+Long Trip,Grocery Store,store,20.0
+Long Trip,Grocery Store,store,100.0
+Long Trip,Grocery Store,store,40.0
+Long Trip,Grocery Store,store,100.0
+Long Trip,Grocery Store,store,18.0
+Long Trip,Grocery Store,store,0.0
+Long Trip,Grocery Store,store,5.0
+Long Trip,Grocery Store,store,15.0
+Long Trip,Grocery Store,store,0.0
+Long Trip,Grocery Store,store,45.0
+Long Trip,Grocery Store,store,15.0
+Long Trip,Grocery Store,store2,0.0
+Long Trip,Grocery Store,store2,10.0
+Long Trip,Grocery Store,store2,12.0
+Long Trip,Grocery Store,store2,50.0
+Long Trip,Grocery Store,store2,25.0
+Long Trip,Grocery Store,store2,0.0
+Long Trip,Grocery Store,store2,15.0
+Long Trip,Grocery Store,store2,15.0
+Long Trip,Grocery Store,store2,0.0
+Long Trip,Department/Big Box Store,store,0.0
+Long Trip,Department/Big Box Store,store,29.0
+Long Trip,Department/Big Box Store,store,0.0
+Long Trip,Department/Big Box Store,store,0.0
+Long Trip,Department/Big Box Store,store,13.0
+Long Trip,Department/Big Box Store,store,18.0
+Long Trip,Department/Big Box Store,store,174.0
+Long Trip,Department/Big Box Store,store,0.0
+Long Trip,Department/Big Box Store,store,2.5
+Long Trip,Department/Big Box Store,store,25.0
+Long Trip,Department/Big Box Store,store,12.0
+Long Trip,Department/Big Box Store,store,20.0
+Long Trip,Department/Big Box Store,store,50.0
+Long Trip,Department/Big Box Store,store,9.0
+Long Trip,Department/Big Box Store,store,30.0
+Long Trip,Department/Big Box Store,store,120.0
+Long Trip,Department/Big Box Store,store,15.0
+Long Trip,Department/Big Box Store,store,5.0
+Long Trip,Department/Big Box Store,store,83.55
+Long Trip,Department/Big Box Store,store,20.0
+Long Trip,Department/Big Box Store,store,0.0
+Long Trip,Department/Big Box Store,store,0.0
+Long Trip,Department/Big Box Store,store,50.0
+Long Trip,Department/Big Box Store,store,0.0
+Long Trip,Department/Big Box Store,store,30.0
+Long Trip,Department/Big Box Store,store,110.0
+Long Trip,Department/Big Box Store,store,100.0
+Long Trip,Department/Big Box Store,store,0.0
+Long Trip,Department/Big Box Store,store,15.0
+Long Trip,Department/Big Box Store,store,100.0
+Long Trip,Department/Big Box Store,store,0.0
+Long Trip,Department/Big Box Store,store2,3.0
+Long Trip,Department/Big Box Store,store2,0.0
+Long Trip,Department/Big Box Store,store2,25.0
+Long Trip,Department/Big Box Store,store2,12.0
+Long Trip,Department/Big Box Store,store2,200.0
+Long Trip,Department/Big Box Store,store2,15.0
+Long Trip,Medical/Dental Facility,store,15.0
+Long Trip,Medical/Dental Facility,store2,15.0
+Long Trip,Cinema/Theatre/Entertainment,store,30.0
+Long Trip,Cinema/Theatre/Entertainment,store,15.0
+Long Trip,Cinema/Theatre/Entertainment,store2,15.0
+Long Trip,Other,store,0.0
+Long Trip,Other,store,0.0
+Long Trip,Other,store,2.0
+Long Trip,Other,store,5.0
+Long Trip,Other,store,50.0
+Long Trip,Other,store,0.0
+Long Trip,Other,store,5.0
+Long Trip,Other,store,5.0
+Long Trip,Other,store,10.0
+Long Trip,Other,store,0.0
+Long Trip,Other,store,30.0
+Long Trip,Other,store,10.0
+Long Trip,Other,store,2.0
+Long Trip,Other,store,0.0
+Long Trip,Other,store,20.0
+Long Trip,Other,store,2.5
+Long Trip,Other,store,0.0
+Long Trip,Other,store,0.0
+Long Trip,Other,store,3.0
+Long Trip,Other,store,5.0
+Long Trip,Other,store,35.0
+Long Trip,Other,store,7.5
+Long Trip,Other,store,0.0
+Long Trip,Other,store,3.0
+Long Trip,Other,store,0.0
+Long Trip,Other,store,16.0
+Long Trip,Other,store,4.5
+Long Trip,Other,store,0.0
+Long Trip,Other,store,15.0
+Long Trip,Other,store,0.0
+Long Trip,Other,store,3.0
+Long Trip,Other,store,20.0
+Long Trip,Other,store,5.0
+Long Trip,Other,store,4.0
+Long Trip,Other,store,15.0
+Long Trip,Other,store,20.0
+Long Trip,Other,store,10.0
+Long Trip,Other,store,10.0
+Long Trip,Other,store,15.0
+Long Trip,Other,store,5.0
+Long Trip,Other,store,0.0
+Long Trip,Other,store,0.0
+Long Trip,Other,store,3.0
+Long Trip,Other,store,2.0
+Long Trip,Other,store,10.0
+Long Trip,Other,store,10.0
+Long Trip,Other,store,2.0
+Long Trip,Other,store,0.0
+Long Trip,Other,store,8.0
+Long Trip,Other,store,15.0
+Long Trip,Other,store,3.5
+Long Trip,Other,store,20.0
+Long Trip,Other,store,0.0
+Long Trip,Other,store,39.0
+Long Trip,Other,store,8.0
+Long Trip,Other,store2,20.0
+Long Trip,Other,store2,50.0
+Long Trip,Other,store2,20.0
+Long Trip,Other,store2,25.0
+Long Trip,Other,store2,5.0
+Long Trip,Other,store2,0.0
+Routine,Café/Restaurant/Bar,store,7.0
+Routine,Café/Restaurant/Bar,store,7.0
+Routine,Café/Restaurant/Bar,store,5.0
+Routine,Café/Restaurant/Bar,store,10.0
+Routine,Café/Restaurant/Bar,store,15.0
+Routine,Café/Restaurant/Bar,store,50.0
+Routine,Café/Restaurant/Bar,store,20.0
+Routine,Café/Restaurant/Bar,store,3.0
+Routine,Café/Restaurant/Bar,store,24.0
+Routine,Café/Restaurant/Bar,store,4.25
+Routine,Café/Restaurant/Bar,store,3.75
+Routine,Café/Restaurant/Bar,store,6.0
+Routine,Café/Restaurant/Bar,store,16.0
+Routine,Café/Restaurant/Bar,store,10.0
+Routine,Café/Restaurant/Bar,store,6.0
+Routine,Café/Restaurant/Bar,store,17.0
+Routine,Café/Restaurant/Bar,store,10.0
+Routine,Café/Restaurant/Bar,store,20.0
+Routine,Café/Restaurant/Bar,store,45.0
+Routine,Café/Restaurant/Bar,store,20.0
+Routine,Café/Restaurant/Bar,store,0.0
+Routine,Café/Restaurant/Bar,store,19.0
+Routine,Café/Restaurant/Bar,store,3.15
+Routine,Café/Restaurant/Bar,store,60.0
+Routine,Café/Restaurant/Bar,store,15.0
+Routine,Café/Restaurant/Bar,store,15.0
+Routine,Café/Restaurant/Bar,store,10.0
+Routine,Café/Restaurant/Bar,store,6.0
+Routine,Café/Restaurant/Bar,store2,7.0
+Routine,Café/Restaurant/Bar,store2,9.0
+Routine,Café/Restaurant/Bar,store2,15.0
+Routine,Café/Restaurant/Bar,store2,12.0
+Routine,Place of Work/Study,store,0.0
+Routine,Place of Work/Study,store,20.0
+Routine,Place of Work/Study,store,15.0
+Routine,Retail/Clothing Store,store,300.0
+Routine,Retail/Clothing Store,store,25.0
+Routine,Retail/Clothing Store,store,30.0
+Routine,Retail/Clothing Store,store,20.0
+Routine,Retail/Clothing Store,store,20.0
+Routine,Retail/Clothing Store,store,5.0
+Routine,Retail/Clothing Store,store,33.0
+Routine,Retail/Clothing Store,store,0.0
+Routine,Retail/Clothing Store,store,15.0
+Routine,Retail/Clothing Store,store,0.0
+Routine,Retail/Clothing Store,store,24.99
+Routine,Retail/Clothing Store,store2,65.0
+Routine,Retail/Clothing Store,store2,0.0
+Routine,Retail/Clothing Store,store2,0.0
+Routine,Retail/Clothing Store,store2,15.0
+Routine,Grocery Store,store,60.0
+Routine,Grocery Store,store,40.0
+Routine,Grocery Store,store,15.0
+Routine,Grocery Store,store,300.0
+Routine,Grocery Store,store,35.0
+Routine,Grocery Store,store,20.0
+Routine,Grocery Store,store,150.0
+Routine,Grocery Store,store,0.0
+Routine,Grocery Store,store,30.0
+Routine,Grocery Store,store,75.0
+Routine,Grocery Store,store,100.0
+Routine,Grocery Store,store,66.44
+Routine,Grocery Store,store,25.0
+Routine,Grocery Store,store,40.0
+Routine,Grocery Store,store,50.0
+Routine,Grocery Store,store,65.0
+Routine,Grocery Store,store,35.0
+Routine,Grocery Store,store,50.0
+Routine,Grocery Store,store,20.0
+Routine,Grocery Store,store,40.0
+Routine,Grocery Store,store,40.0
+Routine,Grocery Store,store,28.0
+Routine,Grocery Store,store,23.0
+Routine,Grocery Store,store,70.0
+Routine,Grocery Store,store,3.52
+Routine,Grocery Store,store,50.0
+Routine,Grocery Store,store,150.0
+Routine,Grocery Store,store,35.0
+Routine,Grocery Store,store,0.0
+Routine,Grocery Store,store,33.0
+Routine,Grocery Store,store,100.0
+Routine,Grocery Store,store,50.0
+Routine,Grocery Store,store,50.0
+Routine,Grocery Store,store,65.0
+Routine,Grocery Store,store,15.0
+Routine,Grocery Store,store,50.0
+Routine,Grocery Store,store,18.0
+Routine,Grocery Store,store2,5.0
+Routine,Grocery Store,store2,35.0
+Routine,Grocery Store,store2,30.0
+Routine,Grocery Store,store2,15.0
+Routine,Department/Big Box Store,store,15.0
+Routine,Department/Big Box Store,store,15.0
+Routine,Department/Big Box Store,store,300.0
+Routine,Department/Big Box Store,store,89.0
+Routine,Department/Big Box Store,store,30.0
+Routine,Department/Big Box Store,store,0.0
+Routine,Department/Big Box Store,store,60.0
+Routine,Department/Big Box Store,store,80.0
+Routine,Department/Big Box Store,store,20.0
+Routine,Department/Big Box Store,store,50.0
+Routine,Department/Big Box Store,store,25.0
+Routine,Department/Big Box Store,store,30.0
+Routine,Department/Big Box Store,store,15.0
+Routine,Department/Big Box Store,store,274.0
+Routine,Department/Big Box Store,store2,15.0
+Routine,Medical/Dental Facility,store,600.0
+Routine,Medical/Dental Facility,store,15.0
+Routine,Medical/Dental Facility,store2,15.0
+Routine,Cinema/Theatre/Entertainment,store,20.0
+Routine,Cinema/Theatre/Entertainment,store,15.0
+Routine,Cinema/Theatre/Entertainment,store2,15.0
+Routine,Other,store,0.0
+Routine,Other,store,10.0
+Routine,Other,store,1.18
+Routine,Other,store,25.0
+Routine,Other,store,14.0
+Routine,Other,store,8.0
+Routine,Other,store,18.0
+Routine,Other,store,5.0
+Routine,Other,store,0.0
+Routine,Other,store,10.2
+Routine,Other,store2,0.0
+Routine,Other,store2,15.0
