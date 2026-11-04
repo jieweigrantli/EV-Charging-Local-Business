@@ -9,7 +9,7 @@ Main figures
   Figure_1  Visit frequency and spending magnitude by amenity type (a: bars; b: box + dots)
   Figure_2  Amenity counts within 250 m of charging locations (discrete distributions, batlow colours)
   Figure_3  Predicted probability of spending for significant covariates (six panels)
-  Figure_4  Visit share and transaction amounts by reason for charging (two panels)
+  Figure_4  Visit share (bars) and transaction amounts (boxplots) by reason for charging (two panels)
 Supplementary figures
   Supplementary_Figure_1/2  Monte Carlo convergence (stage 1 / stage 2)
   Supplementary_Figure_5    Counterfactual charge-duration scenarios
@@ -220,35 +220,28 @@ def figure_4():
     panel_label(ax1, "a", x=-0.08)
 
     n_tx = {r: int((b["reason"] == r).sum()) for r in REASON_ORDER}
-    rng = np.random.default_rng(1)
     counts_b = {s: [] for s in stores}
     for j, r in enumerate(REASON_ORDER):
         data = []
         for s in stores:
             vals = b.loc[(b["reason"] == r) & (b["store_type"] == s), "amount"].values
             counts_b[s].append(len(vals))
-            data.append(np.log1p(vals) if len(vals) else np.array([np.nan]))
-        pos = x + (j - 1) * w
-        ax2.boxplot(data, positions=pos, widths=w * 0.85, patch_artist=True, showfliers=False, whis=1.5,
-                    boxprops=dict(facecolor=REASON_COLORS[r], edgecolor="black", linewidth=0.8, alpha=0.75),
+            data.append(vals if len(vals) else np.array([np.nan]))
+        ax2.boxplot(data, positions=x + (j - 1) * w, widths=w * 0.85, patch_artist=True, whis=1.5,
+                    boxprops=dict(facecolor=REASON_COLORS[r], edgecolor="black", linewidth=0.8),
                     medianprops=dict(color="black", linewidth=1.3), whiskerprops=dict(linewidth=0.8),
-                    capprops=dict(linewidth=0.8), zorder=3,
+                    capprops=dict(linewidth=0.8),
+                    flierprops=dict(marker="o", markerfacecolor="none", markeredgecolor="black",
+                                    markersize=4, markeredgewidth=0.7),
                     showmeans=True, meanprops=dict(marker="^", markerfacecolor="none", markeredgecolor=PALETTE_PRIMARY,
                                                    markersize=6, markeredgewidth=1.3))
-        for p, d in zip(pos, data):
-            if np.isnan(d).all():
-                continue
-            ax2.scatter(p + rng.uniform(-w * 0.3, w * 0.3, len(d)), d, s=6, color="black", alpha=0.3, linewidths=0, zorder=2)
-    ticks = [0, 1, 5, 10, 25, 50, 100, 250, 500, 1000]
-    ax2.set_yticks(np.log1p(ticks))
-    ax2.set_yticklabels([f"{t:,}" for t in ticks])
-    ax2.set_ylim(-0.3, np.log1p(15000))   # headroom for the legend
-    ax2.set_ylabel("Amount spent per transaction (US$, log scale)")
+    ax2.set_ylabel("Amount spent per transaction (US$)")
     ax2.set_xticks(x)
     ax2.set_xticklabels([f"{s}\n(O: {c[0]}, L: {c[1]}, R: {c[2]})" for s, c in counts_b.items()], rotation=45, ha="right")
-    ax2.legend(handles=[Patch(facecolor=REASON_COLORS[r], edgecolor="black", alpha=0.75, label=f"{r} ($n$ = {n_tx[r]})") for r in REASON_ORDER]
+    ax2.legend(handles=[Patch(facecolor=REASON_COLORS[r], edgecolor="black", label=f"{r} ($n$ = {n_tx[r]})") for r in REASON_ORDER]
                + [Line2D([0], [0], marker="^", color=PALETTE_PRIMARY, markerfacecolor="none", lw=0, markersize=6, label="Mean"),
-                  Line2D([0], [0], marker="o", color="black", alpha=0.4, lw=0, markersize=3, label="Individual transaction")],
+                  Line2D([0], [0], marker="o", color="black", markerfacecolor="none", markeredgewidth=0.7, lw=0, markersize=4,
+                         label="Outlier")],
                title="Reason for charging (transactions)", loc="upper right", frameon=False)
     ax2.grid(axis="y", linestyle="--", alpha=0.35)
     panel_label(ax2, "b", x=-0.08)
