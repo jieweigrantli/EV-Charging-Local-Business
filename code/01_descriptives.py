@@ -2,6 +2,9 @@
 01_descriptives.py
 ------------------
 Descriptive statistics and the data behind the descriptive figures.
+With the public file, the demographic rows of Supplementary Table 1 and
+Supplementary Figure 6 are skipped, and distance and battery capacity are
+summarised from their band midpoints.
 
 Outputs (outputs/tables and outputs/source_data):
   * supplementary_table_1_summary_stats.csv/.tex   (Supplementary Table 1)
@@ -59,6 +62,8 @@ summary_spec = [
 rows = []
 for section, items in summary_spec:
     for label, col in items:
+        if col not in df.columns:   # demographics are not in the public file
+            continue
         vals = pd.to_numeric(df[col], errors="coerce")
         if col in unknown_col_map:  # "I don't remember" answers were imputed -> treat as missing
             unc = pd.to_numeric(df[unknown_col_map[col]], errors="coerce")
@@ -184,6 +189,10 @@ def _pct(values, cats):
     return counts / counts.sum() * 100, int(counts.sum())
 
 
+if "income_continuous_number" not in df.columns:   # public file: no demographics
+    print("[supp. figure 6] demographic variables not in the dataset; skipped")
+    print("[done] 01_descriptives.py")
+    raise SystemExit(0)
 income = pd.cut(pd.to_numeric(df["income_continuous_number"]).replace(0, np.nan),
                 bins=[0, 50, 100, 150, 200, np.inf], labels=INCOME_ORDER, right=False)
 age = pd.cut(pd.to_numeric(df["age_continuous_number"]).replace(0, np.nan),

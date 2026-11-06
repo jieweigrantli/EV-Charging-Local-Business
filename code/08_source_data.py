@@ -19,7 +19,7 @@ import shutil
 
 import pandas as pd
 
-from common import FIG_DIR, ROOT, SD_DIR, SUPP_DIR, TAB_DIR
+from common import FIG_DIR, PUBLIC, ROOT, SD_DIR, SUPP_DIR, TAB_DIR
 
 # --------------------------------------------------------------------------- #
 # Source Data (figures)
@@ -34,7 +34,8 @@ sheets["Fig2_summary"] = fig2s
 panels = json.load(open(SD_DIR / "fig3_panels.json"))
 order = ["battery_capacity_centered", "charge_duration", "hh_children", "250m_medical",
          "charge_session_reason_long_trip", "charge_session_reason_opportunity", "250m_standalone_bathroom"]
-letters = "abcdefg"
+order = [v for v in order if v in {p["var"] for p in panels}]   # panels present in this run
+letters = "abcdefg"[:len(order)] if PUBLIC else "abcdefg"
 for letter, var in zip(letters, order):
     safe = var.replace("250m_", "X250m_")
     m = pd.read_csv(SD_DIR / f"fig3_marginal_{safe}.csv")
@@ -61,9 +62,11 @@ d = cf[cf["scenario_type"] == "delta_minutes"]
 sheets["SuppFig5a"] = d[["scenario", "delta_minutes", "avg_probability", "pct_change_probability"]]
 sheets["SuppFig5b"] = d[["scenario", "delta_minutes", "avg_expected_spend", "pct_change_expected_spend"]]
 sheets["SuppFig5c"] = d[["scenario", "delta_minutes", "avg_expected_spend", "abs_change_expected_spend_usd"]]
-demo = pd.read_csv(SD_DIR / "suppfig6_demographic_comparison.csv")
-for letter, metric in zip("abc", ["Household income", "Education", "Age"]):
-    sheets[f"SuppFig6{letter}"] = demo[demo["Metric"] == metric]
+has_demo = (SD_DIR / "suppfig6_demographic_comparison.csv").exists()   # not with the public file
+if has_demo:
+    demo = pd.read_csv(SD_DIR / "suppfig6_demographic_comparison.csv")
+    for letter, metric in zip("abc", ["Household income", "Education", "Age"]):
+        sheets[f"SuppFig6{letter}"] = demo[demo["Metric"] == metric]
 
 readme = pd.DataFrame({"Sheet": list(sheets), "Content": [
     "Figure 1a: number of reported transactions per amenity type (N = 1,586 sessions).",
@@ -85,10 +88,11 @@ readme = pd.DataFrame({"Sheet": list(sheets), "Content": [
     "Supplementary Figure 5a: change in average predicted probability of spending for each charge-duration shift.",
     "Supplementary Figure 5b: percentage change in average expected ancillary spend.",
     "Supplementary Figure 5c: change in average expected ancillary spend in US$ per session.",
+] + ([
     "Supplementary Figure 6a: household income distribution of the survey sample and EV-owner benchmarks (%).",
     "Supplementary Figure 6b: education distribution (%).",
     "Supplementary Figure 6c: age distribution (%).",
-]})
+] if has_demo else [])})
 with pd.ExcelWriter(SD_DIR / "Source_Data.xlsx") as xw:
     readme.to_excel(xw, sheet_name="README", index=False)
     for name, df in sheets.items():
@@ -130,9 +134,9 @@ print("[xlsx] outputs/supplementary_data/Supplementary_Data_2_model_outputs.xlsx
 # --------------------------------------------------------------------------- #
 # Copy figures into the manuscript folder
 # --------------------------------------------------------------------------- #
-dst = ROOT / "manuscript" / "Figures"
-dst.mkdir(parents=True, exist_ok=True)
-for p in sorted(FIG_DIR.glob("*.pdf")):
-    shutil.copy(p, dst / p.name)
-print(f"[copy] {len(list(FIG_DIR.glob('*.pdf')))} figure PDFs -> manuscript/Figures/")
+if not PUBLIC and (ROOT / "manuscript").exists():
+    dst = ROOT / "manuscript" / "Figures"
+    for p in sorted(FIG_DIR.glob("*.pdf")):
+        shutil.copy(p, dst / p.name)
+    print(f"[copy] {len(list(FIG_DIR.glob('*.pdf')))} figure PDFs -> manuscript/Figures/")
 print("[done] 08_source_data.py")

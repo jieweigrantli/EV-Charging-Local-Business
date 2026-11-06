@@ -5,7 +5,7 @@
 # Supplementary Table 2) in R, using the same analytic dataset and the same
 # specification as code/02_two_part_model.py.  HC3 standard errors are
 # computed with the sandwich package.  Writes
-#   outputs/tables/r_crosscheck_two_part_model.csv
+#   outputs/tables/r_crosscheck_two_part_model.csv (outputs_public/ with the public file)
 # and prints the maximum absolute difference to the Python estimates when the
 # Python output (outputs/tables/supplementary_table_2_full_model.csv) exists.
 #
@@ -19,8 +19,29 @@ suppressPackageStartupMessages({
 root <- normalizePath(file.path(dirname(sub("--file=", "", grep("--file=", commandArgs(), value = TRUE)[1])), "..", ".."))
 data_file <- Sys.getenv("EVCLB_DATA", unset = file.path(root, "data", "filtered_dataset.csv"))
 if (!file.exists(data_file)) data_file <- file.path(root, "data", "filtered_dataset_public.csv")
-df <- read.csv(data_file, check.names = FALSE)
+df <- read.csv(data_file, check.names = FALSE, colClasses = c(distance_from_home_band = "character"))
 cat("Data:", basename(data_file), nrow(df), "sessions\n")
+public <- !("race_asian" %in% names(df))
+out_root <- file.path(root, if (public) "outputs_public" else "outputs")
+
+# Public (Dryad) file: rebuild the model variables exactly as common.add_derived() does.
+if (public) {
+  band_mid <- function(lab, map) unname(map[as.character(lab)])
+  dist_map <- c("0" = 0, "0 to 2" = 1, "2 to 5" = 3.5, "5 to 10" = 7.5, "10 to 25" = 17.5, "25 to 50" = 37.5,
+                "50 to 100" = 75, "100 to 250" = 175, "250 to 500" = 375, "500 or more" = 750)
+  bat_map <- c("under 30" = 25, setNames(seq(35, 135, 10), paste(seq(30, 130, 10), "to", seq(40, 140, 10))),
+               "140 or more" = 145)
+  z <- function(v) ifelse(is.na(v), 0, v)
+  df$charge_duration <- z(df$charge_duration_hours) + z(df$charge_duration_minutes) / 60
+  df$wait_time <- z(df$wait_time_hours) + z(df$wait_time_minutes) / 60
+  df$session_cost_log1p_centered <- log1p(df$session_cost) - 1.71971755
+  dist <- z(band_mid(df$distance_from_home_band, dist_map))
+  df$distance_from_home_exist <- as.integer(dist > 0)
+  df$distance_from_home_log1p_centered <- (log1p(dist) - 3.4767063923) * df$distance_from_home_exist
+  bat <- z(band_mid(df$battery_capacity_band, bat_map))
+  df$battery_capacity_exist <- as.integer(bat > 0)
+  df$battery_capacity_centered <- (bat - 76.14056456) * df$battery_capacity_exist
+}
 
 predictors <- c(
   "race_asian", "race_black", "race_hispanic", "gender_female", "edu_college", "edu_grad",
@@ -43,6 +64,7 @@ target <- "store_total_spent_calc"
 X <- df[, predictors]
 X[] <- lapply(X, function(v) suppressWarnings(as.numeric(v)))
 complete <- stats::complete.cases(X)
+if ("in_model_sample" %in% names(df)) complete <- complete & df$in_model_sample == 1   # published sample
 d <- X[complete, ]
 y <- suppressWarnings(as.numeric(df[[target]][complete]))
 d$spend_any <- as.integer(!is.na(y) & y > 0)
@@ -68,12 +90,12 @@ tidy <- function(ct, model) {
 out <- rbind(tidy(glm_hc3, "extensive_logit"), tidy(ols_hc3, "intensive_ols"))
 out$term <- sub("^X250m_", "250m_", out$term)
 out$term[out$term == "(Intercept)"] <- "const"
-out_file <- file.path(root, "outputs", "tables", "r_crosscheck_two_part_model.csv")
+out_file <- file.path(out_root, "tables", "r_crosscheck_two_part_model.csv")
 dir.create(dirname(out_file), showWarnings = FALSE, recursive = TRUE)
 write.csv(out, out_file, row.names = FALSE)
 cat("Wrote", out_file, "\n")
 
-py_file <- file.path(root, "outputs", "tables", "supplementary_table_2_full_model.csv")
+py_file <- file.path(out_root, "tables", "supplementary_table_2_full_model.csv")
 if (file.exists(py_file)) {
   py <- read.csv(py_file, check.names = FALSE)
   g <- merge(out[out$model == "extensive_logit", ], py[, c("term", "coef_logit", "se_logit")], by = "term")

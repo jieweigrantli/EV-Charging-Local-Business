@@ -48,7 +48,7 @@ def save(fig, name):
     for ext in ("pdf", "png"):
         fig.savefig(FIG_DIR / f"{name}.{ext}", dpi=300, bbox_inches="tight")
     plt.close(fig)
-    print(f"[fig]  outputs/figures/{name}.pdf (+png)")
+    print(f"[fig]  {(FIG_DIR / name).relative_to(ROOT)}.pdf (+png)")
 
 
 # =========================================================================== #
@@ -293,6 +293,9 @@ def supp_fig_counterfactual():
 
 
 def supp_fig_demographics():
+    if not (SD_DIR / "suppfig6_demographic_comparison.csv").exists():   # public file: no demographics
+        print("[supp. figure 6] no demographic data; skipped")
+        return
     demo = pd.read_csv(SD_DIR / "suppfig6_demographic_comparison.csv")
     orders = {"Household income": ["<$50k", "$50k-$99k", "$100k-$149k", "$150k-$199k", "$200k+"],
               "Education": ["<High school", "High school/GED", "Some college/Associate", "Bachelor's", "Graduate/professional"],

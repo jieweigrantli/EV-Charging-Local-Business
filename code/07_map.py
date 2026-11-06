@@ -21,7 +21,7 @@ import zipfile
 from common import DATA_DIR, FIG_DIR, PALETTE_SECONDARY, SD_DIR, write_csv
 
 if not (DATA_DIR / "charger_coordinates.csv").exists():
-    print("[map] data/charger_coordinates.csv not found (coordinates are not part of the public deposit); "
+    print("[map] data/charger_coordinates.csv not found (the coordinates are not distributed); "
           "skipping Supplementary Figure 3.")
     raise SystemExit(0)
 

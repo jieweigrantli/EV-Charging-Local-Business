@@ -14,7 +14,7 @@ The study links a 2025 survey of 1,586 self-reported DC fast charging sessions i
 ```bash
 git clone https://github.com/jieweigrantli/EV-Charging-Local-Business.git
 cd EV-Charging-Local-Business
-# 1. download the dataset from Dryad and save it as data/filtered_dataset.csv
+# 1. download filtered_dataset_public.csv from Dryad and save it in data/
 # 2. create the environment
 python3.11 -m venv .venv && source .venv/bin/activate
 pip install -r requirements.txt
@@ -39,15 +39,28 @@ Tested with Python 3.11.1; package versions are pinned in `requirements.txt`.
 | `07_map.py` | Supplementary Fig. 3 (map of charging locations) |
 | `08_source_data.py` | `Source_Data.xlsx` (one sheet per figure panel) and Supplementary Data 2 (all model outputs) |
 
-All outputs are written to `outputs/` (`tables/`, `figures/`, `source_data/`, `supplementary_data/`, `logs/`). Each script can also be run on its own from the `code/` folder; `common.py` holds the model specification and shared helpers.
+All outputs are written to `outputs/` (`tables/`, `figures/`, `source_data/`, `supplementary_data/`, `logs/`), or to `outputs_public/` when the public Dryad file is used. Neither folder is part of the repository: the scripts create them. The published Source Data and Supplementary Data are available with the paper. Each script can also be run on its own from the `code/` folder; `common.py` holds the model specification and shared helpers.
 
 ## Data
 
-No survey data are distributed with the code. Download the analytic dataset (N = 1,586 sessions, with a variable dictionary) from Dryad and save it as `data/filtered_dataset.csv`; the scripts read it directly. See [`data/README.md`](data/README.md) for the variables.
+No survey data are distributed with the code. Download the public dataset (`filtered_dataset_public.csv`, N = 1,586 sessions, with a variable dictionary) from Dryad and save it in `data/`; the scripts read it directly. See [`data/README.md`](data/README.md) for the variables.
 
-The Dryad file omits the race and education variables to protect respondents. The scripts detect this, drop the five race/education predictors and print a warning; sample sizes are unchanged (N = 1,360 and 540) and coefficients differ slightly from the published values, which were estimated on the restricted file. The restricted file is available from the corresponding author (jwgli@ucdavis.edu) under a data use agreement; placed at the same path it reproduces the paper exactly. Another path can be given with `EVCLB_DATA=/path/to/file.csv`.
+The public file is de-identified (the Dryad README lists each step):
 
-Included in the repository: `data/charger_coordinates.csv` (the public charger nearest to each marked charging location, unlinked to responses; Source Data of Supplementary Fig. 3) and `data/external/ev_owner_demographic_benchmarks.csv` (EV-owner percentages from the public NHTS 2022 and 2024 California Vehicle Survey microdata, for Supplementary Fig. 6). Natural Earth boundaries for the map are downloaded on first use.
+* **Kept:** spending, coded store categories, session characteristics and amenity counts within 250 m.
+* **Banded:** distance from home and battery capacity.
+* **Removed:** demographics, free text and response IDs.
+* **Merged:** medical or dental store visits are combined with "Other".
+
+The scripts detect the public file and:
+
+* rebuild the model variables from the kept columns;
+* omit the demographic and vehicle-use predictors;
+* estimate the models on the same sessions as the paper (N = 1,360 and 540), using the `in_model_sample` flag.
+
+The main results are reproduced, and coefficients differ slightly from the published values. The full analytic dataset is available from the corresponding author (jwgli@ucdavis.edu) on request; placed at `data/filtered_dataset.csv`, it reproduces the paper exactly. Another path can be given with `EVCLB_DATA=/path/to/file.csv`.
+
+Included in the repository: `data/external/ev_owner_demographic_benchmarks.csv` (EV-owner percentages from the public NHTS 2022 and 2024 California Vehicle Survey microdata, for Supplementary Fig. 6). The charger coordinates behind the map (Supplementary Fig. 3) are not distributed, so `07_map.py` skips the map unless `data/charger_coordinates.csv` is present; Natural Earth boundaries for the map are downloaded on first use.
 
 ## Model
 
@@ -61,8 +74,8 @@ Included in the repository: `data/charger_coordinates.csv` (the public charger n
 
 ```
 code/                 numbered scripts, common.py, R/ cross-check
-data/                 dataset (download), coordinates, benchmark percentages, variable dictionary
-outputs/              tables, figures, Source Data, Supplementary Data, logs
+data/                 dataset (download), benchmark percentages
+outputs/              tables, figures, Source Data, Supplementary Data, logs (created by run_all.py; not tracked)
 ```
 
 ## License

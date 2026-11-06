@@ -1,14 +1,15 @@
 #!/usr/bin/env python
 """
 run_all.py -- reproduce every table, figure, Source Data file and
-Supplementary Data file of the paper from data/filtered_dataset.csv.
+Supplementary Data file of the paper from data/filtered_dataset.csv (full
+dataset), or a reduced version from data/filtered_dataset_public.csv (Dryad).
 
     python run_all.py            # full pipeline (about 3-4 minutes)
     python run_all.py --quick    # skip the Monte Carlo convergence simulation
     python run_all.py --no-map   # skip the map (needs geopandas + one download)
 
-Set EVCLB_DATA=/path/to/dataset.csv to run on a different dataset (for
-example the public Dryad file, which omits race and education).
+Set EVCLB_DATA=/path/to/dataset.csv to run on a different dataset.  Runs on
+the public file write to outputs_public/.
 """
 import argparse
 import subprocess
@@ -46,4 +47,6 @@ for script, desc in STEPS:
     r = subprocess.run([sys.executable, script], cwd=CODE)
     if r.returncode != 0:
         sys.exit(f"{script} failed with exit code {r.returncode}")
-print(f"\nAll steps finished in {time.time() - t0:.0f} s. Outputs are in {ROOT / 'outputs'}.")
+sys.path.insert(0, str(CODE))
+from common import OUT_DIR  # noqa: E402
+print(f"\nAll steps finished in {time.time() - t0:.0f} s. Outputs are in {OUT_DIR}.")

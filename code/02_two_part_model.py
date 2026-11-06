@@ -296,6 +296,8 @@ json.dump(panel_specs, open(SD_DIR / "fig3_panels.json", "w"), indent=2)
 # Headline quantities quoted in the text (predicted probabilities at specific values)
 ref = reference_row(Xg, exclude="charge_duration")
 def _p_at(var, val):
+    if var not in Xg.columns:   # predictor not in the (public) dataset
+        return float("nan")
     r = reference_row(Xg, exclude=var); r[var] = val
     nx = sm.add_constant(pd.DataFrame([r])[Xg.columns], has_constant="add")[res.X_glm.columns]
     return float(glm.predict(nx)[0])
@@ -311,9 +313,9 @@ headline = {
     "p_grocery_0": _p_at("250m_grocery", 0), "p_grocery_1": _p_at("250m_grocery", 1),
     "p_standalone_0": _p_at("250m_standalone_bathroom", 0), "p_standalone_1": _p_at("250m_standalone_bathroom", 1),
     "ols_pct_long_trip": 100 * (np.exp(ols.params["charge_session_reason_long_trip"]) - 1),
-    "ols_pct_female": 100 * (np.exp(ols.params["gender_female"]) - 1),
+    "ols_pct_female": 100 * (np.exp(ols.params.get("gender_female", np.nan)) - 1),
     "ols_pct_battery_25kwh": 100 * (np.exp(25 * ols.params["battery_capacity_centered"]) - 1),
-    "ols_elasticity_income_10pct": 100 * (1.1 ** ols.params["log_income_centered"] - 1),
+    "ols_elasticity_income_10pct": 100 * (1.1 ** ols.params.get("log_income_centered", np.nan) - 1),
 }
 json.dump(headline, open(LOG_DIR / "02_headline_quantities.json", "w"), indent=2)
 print(json.dumps(headline, indent=2))

@@ -6,8 +6,18 @@ Shared configuration and helper functions for the replication pipeline of
 
 Every numbered script in this folder imports this module.  Nothing in here
 performs data cleaning: the analysis starts from the analytic dataset
-(`data/filtered_dataset.csv`, N = 1,586 sessions) exactly as exported by the
-authors' data-processing pipeline.
+(N = 1,586 sessions) exactly as exported by the authors' data-processing
+pipeline.
+
+Two versions of the dataset exist:
+  * data/filtered_dataset.csv         restricted file (all variables; available
+                                      from the corresponding author on request)
+  * data/filtered_dataset_public.csv  de-identified public file (Dryad); see
+                                      data/README.md and the Dryad README
+With the public file, the model variables are rebuilt from the kept columns by
+`add_derived()`, the models omit the demographic and vehicle-use predictors
+that are not in the public file, and outputs are written to outputs_public/ so
+the published outputs in outputs/ are never overwritten.
 """
 from __future__ import annotations
 
@@ -27,7 +37,23 @@ warnings.filterwarnings("ignore", category=FutureWarning)
 # --------------------------------------------------------------------------- #
 ROOT = Path(__file__).resolve().parents[1]
 DATA_DIR = ROOT / "data"
-OUT_DIR = ROOT / "outputs"
+
+# The restricted analytic dataset is used when it is present.  Otherwise the
+# pipeline falls back to the public (Dryad) version; set EVCLB_DATA to force a
+# particular file.
+_default = DATA_DIR / "filtered_dataset.csv"
+_public = DATA_DIR / "filtered_dataset_public.csv"
+DATA_FILE = Path(os.environ.get("EVCLB_DATA", _default if _default.exists() else _public))
+if not DATA_FILE.exists():
+    sys.exit(
+        f"Dataset not found: {DATA_FILE}\n"
+        "Download filtered_dataset_public.csv from the Dryad deposit (https://doi.org/10.5061/dryad.v15dv42bb) "
+        "and save it in data/, or set EVCLB_DATA to its path."
+    )
+# The public file has no demographic columns.
+PUBLIC = "race_asian" not in pd.read_csv(DATA_FILE, nrows=0).columns
+
+OUT_DIR = ROOT / ("outputs_public" if PUBLIC else "outputs")
 FIG_DIR = OUT_DIR / "figures"
 TAB_DIR = OUT_DIR / "tables"
 SD_DIR = OUT_DIR / "source_data"          # per-panel CSVs -> Source Data.xlsx
@@ -35,19 +61,6 @@ SUPP_DIR = OUT_DIR / "supplementary_data"  # Supplementary Data xlsx files
 LOG_DIR = OUT_DIR / "logs"
 for _d in (FIG_DIR, TAB_DIR, SD_DIR, SUPP_DIR, LOG_DIR):
     _d.mkdir(parents=True, exist_ok=True)
-
-# The restricted analytic dataset (all demographic variables) is used when it
-# is present.  Otherwise the pipeline falls back to the public (Dryad) version,
-# which omits race and education; set EVCLB_DATA to force a particular file.
-_default = DATA_DIR / "filtered_dataset.csv"
-_public = DATA_DIR / "filtered_dataset_public.csv"
-DATA_FILE = Path(os.environ.get("EVCLB_DATA", _default if _default.exists() else _public))
-if not DATA_FILE.exists():
-    sys.exit(
-        f"Dataset not found: {DATA_FILE}\n"
-        "Download the analytic dataset from the Dryad deposit (https://doi.org/10.5061/dryad.v15dv42bb) "
-        "and save it as data/filtered_dataset.csv, or set EVCLB_DATA to its path."
-    )
 
 # --------------------------------------------------------------------------- #
 # Model specification
@@ -69,8 +82,31 @@ PREDICTORS = [
     "battery_capacity_centered", "distance_from_home_log1p_centered",
     "session_cost_log1p_centered", "log_income_centered", "age_centered",
 ]
-# Variables that are only in the restricted dataset (not on Dryad).
-RESTRICTED_PREDICTORS = ["race_asian", "race_black", "race_hispanic", "edu_college", "edu_grad"]
+# Predictors that are only in the restricted dataset (not on Dryad).
+RESTRICTED_PREDICTORS = ["race_asian", "race_black", "race_hispanic", "gender_female", "edu_college", "edu_grad",
+                         "hh_adults", "hh_children", "veh_use_commuting", "veh_use_private", "veh_use_business",
+                         "veh_use_gigecon", "log_income_continuous_exist", "age_continuous_exist",
+                         "log_income_centered", "age_centered"]
+
+# Public file: 0/1 flag for the 1,360 sessions in the published model (complete
+# cases on all 36 predictors), so the reduced public model uses the same sessions.
+SAMPLE_FLAG = "in_model_sample"
+
+# Centring constants of the published model (sample means of the reported values).
+CENTER_DISTANCE_LOG1P = 3.4767063923
+CENTER_BATTERY = 76.14056456
+CENTER_SESSION_COST_LOG1P = 1.71971755
+
+# Bands used in the public file: (lower, upper, label, value used in the model).
+# A value x falls in a band when lower <= x < upper.  Labels are words ("2 to 5"),
+# not "2-5", so spreadsheet software does not read them as dates.
+DISTANCE_BANDS = [  # miles
+    (0, 1e-9, "0", 0.0), (1e-9, 2, "0 to 2", 1.0), (2, 5, "2 to 5", 3.5), (5, 10, "5 to 10", 7.5),
+    (10, 25, "10 to 25", 17.5), (25, 50, "25 to 50", 37.5), (50, 100, "50 to 100", 75.0),
+    (100, 250, "100 to 250", 175.0), (250, 500, "250 to 500", 375.0), (500, np.inf, "500 or more", 750.0),
+]
+BATTERY_BANDS = [(0, 30, "under 30", 25.0)] + [
+    (lo, lo + 10, f"{lo} to {lo + 10}", lo + 5.0) for lo in range(30, 140, 10)] + [(140, np.inf, "140 or more", 145.0)]
 
 AMENITY_VARS = [c for c in PREDICTORS if c.startswith("250m_")]
 REASON_VARS = {
@@ -157,17 +193,66 @@ REASON_ORDER = ["Opportunity", "Long Trip", "Routine"]
 # --------------------------------------------------------------------------- #
 # Data access
 # --------------------------------------------------------------------------- #
+def band_label(x: pd.Series, bands) -> pd.Series:
+    """Label of the band each value falls in (NaN stays NaN)."""
+    out = pd.Series(pd.NA, index=x.index, dtype="object")
+    for lo, hi, label, _ in bands:
+        out[(x >= lo) & (x < hi)] = label
+    return out
+
+
+def band_value(labels: pd.Series, bands) -> pd.Series:
+    """Representative value (band midpoint) for each band label."""
+    return labels.map({label: v for _, _, label, v in bands}).astype(float)
+
+
+def add_derived(df: pd.DataFrame) -> pd.DataFrame:
+    """Rebuild the model variables from the columns kept in the public file.
+
+    Each derived column is created only when it is absent, so the restricted
+    file (which stores them) is left unchanged.  The formulas are the ones used
+    to build the restricted file: missing values are set to 0 and flagged by an
+    `_exist` indicator, and continuous variables are centred with the constants
+    of the published model.
+    """
+    df = df.copy()
+    num = lambda c: pd.to_numeric(df[c], errors="coerce")  # noqa: E731
+    for v in ("charge_duration", "wait_time"):
+        if v not in df.columns and f"{v}_hours" in df.columns:
+            df[v] = num(f"{v}_hours").fillna(0) + num(f"{v}_minutes").fillna(0) / 60.0
+    if "store_total_spent_anything" not in df.columns and "charge_session_spent_money" in df.columns:
+        df["store_total_spent_anything"] = (num("charge_session_spent_money") == 1).astype(int)
+    if "session_cost_log1p_centered" not in df.columns:
+        df["session_cost_log1p_centered"] = np.log1p(num("session_cost")) - CENTER_SESSION_COST_LOG1P
+    if "distance_from_home" not in df.columns and "distance_from_home_band" in df.columns:
+        df["distance_from_home"] = band_value(df["distance_from_home_band"], DISTANCE_BANDS)
+    if "distance_from_home_log1p_centered" not in df.columns:
+        d = num("distance_from_home").fillna(0)
+        df["distance_from_home_exist"] = (d > 0).astype(int)
+        df["distance_from_home_log1p_centered"] = (np.log1p(d) - CENTER_DISTANCE_LOG1P) * df["distance_from_home_exist"]
+    if "battery_capacity" not in df.columns and "battery_capacity_band" in df.columns:
+        df["battery_capacity"] = band_value(df["battery_capacity_band"], BATTERY_BANDS)
+    if "battery_capacity_centered" not in df.columns:
+        b = num("battery_capacity").fillna(0)
+        df["battery_capacity_exist"] = (b > 0).astype(int)
+        df["battery_capacity_centered"] = (b - CENTER_BATTERY) * df["battery_capacity_exist"]
+    if "response_id" not in df.columns and "record_id" in df.columns:
+        df["response_id"] = df["record_id"]
+    return df
+
+
 def load_data(path: Path | None = None) -> pd.DataFrame:
     """Load the analytic dataset (one row per reported DC fast charging session)."""
     path = Path(path) if path else DATA_FILE
-    df = pd.read_csv(path, low_memory=False)
-    print(f"[data] {path.name}: {df.shape[0]} sessions x {df.shape[1]} columns")
+    df = add_derived(pd.read_csv(path, low_memory=False))
+    print(f"[data] {path.name}: {df.shape[0]} sessions x {df.shape[1]} columns"
+          + (" (public file; outputs -> outputs_public/)" if PUBLIC else ""))
     return df
 
 
 def available_predictors(df: pd.DataFrame, predictors=PREDICTORS) -> list[str]:
     """Return the predictors present in `df`, warning about any that are missing
-    (the public dataset omits race and education)."""
+    (the public dataset has no demographic or vehicle-use predictors)."""
     missing = [c for c in predictors if c not in df.columns]
     if missing:
         print(
@@ -207,6 +292,8 @@ def fit_two_part(df: pd.DataFrame, X: pd.DataFrame, target: str = TARGET, cov_ty
     X = X.copy()
     if complete_cases:
         keep = X.notna().all(axis=1)
+        if SAMPLE_FLAG in df.columns:   # public file: same sessions as the published model
+            keep &= df.loc[X.index, SAMPLE_FLAG] == 1
         X = X.loc[keep]
     y = pd.to_numeric(df.loc[X.index, target], errors="coerce")
     y_any = (y > 0).astype(int)
@@ -292,9 +379,9 @@ def write_csv(df: pd.DataFrame, path: Path, **kw) -> Path:
 # Store visits / transactions (used for Table 1, Figure 1 and Figure 4)
 # --------------------------------------------------------------------------- #
 def store_visited_mask(df: pd.DataFrame, type_col: str, key: str) -> pd.Series:
-    """A store of category `key` was visited (regression format uses 0/1; the
-    'other' category is recorded as free text)."""
-    if key == "other":
+    """A store of category `key` was visited (regression format uses 0/1; in the
+    restricted file the 'other' category is recorded as free text)."""
+    if key == "other" and df[type_col].dtype == object:
         return df[type_col].notna()
     col = df[type_col]
     return (col == 1) | (col == 1.0) | (col == "Yes")
